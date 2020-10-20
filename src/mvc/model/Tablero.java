@@ -1,9 +1,11 @@
+package mvc.model;
 
 public class Tablero {
 	private int nivel = 1, bombas = 0, medida = 0;
+	protected Casilla[][] tablero;
 	
-	public Tablero() {
-		
+	public Tablero(int nivel) {
+		setNivel(nivel);
 	}
 	
 	public void mostrar() {
@@ -17,7 +19,9 @@ public class Tablero {
 	public void inicializar() {
 		
 	}
-	
+	public Casilla[][] getTablero() {
+		return tablero;
+	}
 	public void setNivel(int nivel) {
 		this.nivel = nivel;
 	}
