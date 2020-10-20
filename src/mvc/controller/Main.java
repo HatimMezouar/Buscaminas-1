@@ -1,3 +1,4 @@
+package mvc.controller;
 import java.util.Scanner;
 
 public class Main {
