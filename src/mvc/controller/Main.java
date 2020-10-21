@@ -5,8 +5,11 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println("Pulsa 1: Nivel Facil - 10 Bombas");
-		System.out.println("Pulsa 2: Nivel Dificil - 15 Bombas");
+		System.out.println("Selecciona un nivel:");
+		System.out.println("Pulsa 1: Nivel Facil");
+		System.out.println("Pulsa 2: Nivel Medio");
+		System.out.println("Pulsa 3: Nivel Dificil");
+		System.out.println("Pulsa 4: Nivel Muy Dificil");
 		System.out.println("Salir");
 		
 		Scanner sc = new Scanner(System.in);
