@@ -3,7 +3,7 @@ import mvc.model.Tablero;
 
 public class Partida {
 	
-	private Tablero tablero;
+	public Tablero tablero;
 	protected boolean enJuego;
 	private int nivel;
 	
