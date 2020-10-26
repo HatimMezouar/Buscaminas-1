@@ -7,8 +7,11 @@ class CasillaTest {
 
 	@Test
 	void testDentroRango() {
-		Casilla cas1 = new Casilla(7,8);
-		Casilla cas2 = new Casilla(1,3);
+		Casilla cas1 = new Casilla();
+		Casilla cas2 = new Casilla();
+		
+		cas1.posiciones(7,8);
+		cas2.posiciones(1,3);
 		
 		assertTrue(cas1.dentroRango(8));
 		assertTrue(cas1.dentroRango(10));

@@ -10,7 +10,8 @@ public class CoverageTest {
 	//(s'ha de jugar amb els valors)
 	@Test
 	void testCcasillaCoverage() {
-		Casilla casilla=new Casilla(0,0);
+		Casilla casilla=new Casilla();
+		casilla.posiciones(0,0);
 		casilla.setValor(2);
 		casilla.setValor(-1);
 		casilla.setValor(1);
@@ -22,7 +23,8 @@ public class CoverageTest {
 	//(s'ha de jugar amb els valors)
 	@Test
 	void testCEsminaCoverage() {
-		Casilla casilla=new Casilla(0,0);
+		Casilla casilla=new Casilla();
+		casilla.posiciones(0,0);
 		casilla.setValor(1);
 		casilla.setMina(false);
 		casilla.setMina(true);

@@ -10,32 +10,42 @@ public class Tablero {
     
 	public Tablero(int nivel) {
 		setNivel(nivel);
+		setMedida(nivel);
+		setBombas(nivel);
+		this.tablero=IniciarTablero();
 	}
 	
 	public void mostrar() {
 		
 	}
 	
-	public void crearMinas() {
-		
-	}
-	
 	public void inicializar() {
 		
 	}
-	public Casilla[][] getTablero() {
-		return tablero;
+	
+	public void crearMinas() {
+		
+	}
+
+	public Casilla[][] IniciarTablero() {
+		this.tablero = new Casilla[medida][medida];
+		for(int i=0; i<this.tablero.length; i++) {
+    		for(int j=0; j<this.tablero.length; j++) {
+    			this.tablero[i][j] = new Casilla();
+    		}
+    	}
+		return this.tablero;
 	}
 	public void setNivel(int nivel) {
 		this.nivel = nivel;
 	}
 	
 	public void setBombas(int bombas) {
-		this.bombas = bombas;
+		this.bombas = bombas*5;
 	}
 	
 	public void setMedida(int medida) {
-		this.medida = medida;
+		this.medida = medida*5;
 	}
 	public void setBombasPartida(int bombas_tablero) {
 		this.bombas_tablero = bombas_tablero;

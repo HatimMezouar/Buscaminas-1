@@ -8,7 +8,6 @@ public class Partida {
 	private int nivel;
 	
 	public Partida() {
-		tablero = new Tablero(0);
 		enJuego = true;
 	}
 	
@@ -46,7 +45,7 @@ public class Partida {
 	}
 	
 	public void mostrarTablero() {
-		
+		tablero.mostrar();
 	}
 	
 	public void destaparCasilla() {

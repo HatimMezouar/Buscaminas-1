@@ -5,15 +5,17 @@ public class Casilla {
 	private boolean abierta, mina, marcado;
 	private int posicionX, posicionY, valor;
 	
-	public Casilla(int x, int y) {
+	public Casilla() {
 		valor = 0;
 		mina = false;
 		abierta = false;
 		marcado = false;
+	}
+	
+	public void posiciones(int x, int y) {
 		setPosX(x);
 		setPosY(y);
 	}
-	
 	
 	public boolean dentroRango(int rango)
 	{
