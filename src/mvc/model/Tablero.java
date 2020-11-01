@@ -16,7 +16,24 @@ public class Tablero {
 	}
 	
 	public void mostrar() {
-		
+		for(int i=0;i<getMedida();i++){
+    		for(int j=0;j<getMedida();j++){
+    			if(tablero[i][j].getAbierta() && !tablero[i][j].getMina()){
+    				System.out.print(" "+tablero[i][j].getValor()+" ");
+    			} else {
+	    			if(!tablero[i][j].getAbierta()){
+	    				if(tablero[i][j].getMarcado()) {
+    						System.out.print(" B ");
+    					} else {
+    						System.out.print("[ ]");
+    					}
+	    			}else{
+	    				System.out.print(" "+tablero[i][j].getValor()+" ");
+	    			}
+    			}
+    		}
+    		System.out.println("\n");
+    	}
 	}
 	
 	public void inicializar() {

@@ -52,6 +52,14 @@ public class Partida {
 		
 	}
 	
+	public void marcarCasilla() {
+		
+	}
+	
+	public void desmarcarCasilla() {
+		
+	}
+	
 	public void comprobar() {
 		
 	}

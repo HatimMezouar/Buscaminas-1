@@ -81,4 +81,9 @@ public class Casilla {
 	{
 		return posicionY;
 	}
+	
+	public boolean getAbierta() {
+		return abierta;
+	}
+	
 }
