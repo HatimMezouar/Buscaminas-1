@@ -6,7 +6,8 @@ import mvc.view.Partida;
 public class Main {
 
 	public static void main(String[] args) {
-		int opcion = 0;
+		int opcion = 0, posX = 0, posY = 0;
+		boolean posValida = false;
 		
 		Partida partida = new Partida();
 		Scanner sc = new Scanner(System.in);
@@ -47,12 +48,22 @@ public class Main {
 				System.out.println("Pulsa 4: Salir");
 				opcion = sc.nextInt();
 			}
-			
 			if(opcion>0 || opcion <5) {
 				switch(opcion) {
 				case 1: 
-					partida.marcarCasilla();
+					while(!posValida) {
+						System.out.println("Elige una columna:");
+						posX = sc.nextInt();
+						System.out.println("Elige una fila:");
+						posY = sc.nextInt();
+						posValida = partida.posCorrecta(posX, posY);
+						if(!posValida) {
+							System.out.println("Numeros incorrectos");
+						}
+					}
+					partida.marcarCasilla(posX, posY);
 					partida.mostrarTablero();
+					posValida = false;
 					break;
 				case 2: 
 					partida.desmarcarCasilla();

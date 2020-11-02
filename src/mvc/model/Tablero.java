@@ -1,5 +1,7 @@
 package mvc.model;
 
+import java.util.Scanner;
+
 public class Tablero {
 	private int nivel = 1, bombas = 0, medida = 0;
 	protected Casilla[][] tablero;
@@ -38,6 +40,29 @@ public class Tablero {
 	
 	public void inicializar() {
 		
+	}
+	
+	public boolean posCorrecta(int posX, int posY) {
+		Casilla posXY = new Casilla();
+		posXY.posiciones(posX, posY);
+		if(posXY.dentroRango(medida)) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	
+	public void marcarCasilla(int posX, int posY) {
+		if(tablero[posX][posY].getAbierta()==false){
+    		this.casilla_destapada++;
+    		if(tablero[posX][posY].getMina()){
+    			System.out.println("Mina detectada!");
+    			this.minas_detectadas++;
+    			tablero[posX][posY].setMarcado(true);
+    		}	
+    	} else {
+    		System.out.println("Incorrecto!");
+    	}
 	}
 	
 	public void crearMinas() {

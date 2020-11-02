@@ -52,8 +52,12 @@ public class Partida {
 		
 	}
 	
-	public void marcarCasilla() {
-		
+	public boolean posCorrecta(int posX, int posY) {
+		return tablero.posCorrecta(posX, posY);
+	}
+	
+	public void marcarCasilla(int posX, int posY) {
+		tablero.marcarCasilla(posX, posY);
 	}
 	
 	public void desmarcarCasilla() {
