@@ -52,22 +52,33 @@ public class Main {
 				switch(opcion) {
 				case 1: 
 					while(!posValida) {
-						System.out.println("Elige una columna:");
-						posX = sc.nextInt();
 						System.out.println("Elige una fila:");
+						posX = sc.nextInt();
+						System.out.println("Elige una columna:");
 						posY = sc.nextInt();
-						posValida = partida.posCorrecta(posX, posY);
+						posValida = partida.posCorrecta(posX-1, posY-1);
 						if(!posValida) {
 							System.out.println("Numeros incorrectos");
 						}
 					}
-					partida.marcarCasilla(posX, posY);
+					partida.marcarCasilla(posX-1, posY-1);
 					partida.mostrarTablero();
 					posValida = false;
 					break;
-				case 2: 
-					partida.desmarcarCasilla();
+				case 2:
+					while(!posValida) {
+						System.out.println("Elige una fila:");
+						posX = sc.nextInt();
+						System.out.println("Elige una columna:");
+						posY = sc.nextInt();
+						posValida = partida.posCorrecta(posX-1, posY-1);
+						if(!posValida) {
+							System.out.println("Numeros incorrectos");
+						}
+					}
+					partida.desmarcarCasilla(posX-1, posY-1);
 					partida.mostrarTablero();
+					posValida = false;
 					break;
 				case 3: 
 					partida.destaparCasilla();

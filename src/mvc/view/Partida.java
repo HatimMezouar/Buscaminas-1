@@ -60,8 +60,8 @@ public class Partida {
 		tablero.marcarCasilla(posX, posY);
 	}
 	
-	public void desmarcarCasilla() {
-		
+	public void desmarcarCasilla(int posX, int posY) {
+		tablero.desmarcarCasilla(posX, posY);
 	}
 	
 	public void comprobar() {

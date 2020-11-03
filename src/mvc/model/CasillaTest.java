@@ -13,7 +13,7 @@ class CasillaTest {
 		cas1.posiciones(7,8);
 		cas2.posiciones(1,3);
 		
-		assertTrue(cas1.dentroRango(8));
+		assertTrue(cas1.dentroRango(9));
 		assertTrue(cas1.dentroRango(10));
 		assertTrue(cas1.dentroRango(12));
 		assertFalse(cas1.dentroRango(5));
@@ -24,7 +24,7 @@ class CasillaTest {
 		assertTrue(cas2.dentroRango(10));
 		assertTrue(cas2.dentroRango(12));
 		assertFalse(!cas2.dentroRango(5));
-		assertFalse(!cas2.dentroRango(3));
+		assertFalse(cas2.dentroRango(3));
 		assertFalse(cas2.dentroRango(1));
 	}
 

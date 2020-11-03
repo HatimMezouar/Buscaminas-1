@@ -19,7 +19,7 @@ public class Casilla {
 	
 	public boolean dentroRango(int rango)
 	{
-		return (posicionX > 0 && posicionX <= rango) && (posicionY > 0 && posicionY <= rango);
+		return (posicionX >= 0 && posicionX < rango) && (posicionY >= 0 && posicionY < rango);
 	}
 	
 	public boolean equals (Object o) 

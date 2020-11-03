@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Tablero {
 	private int nivel = 1, bombas = 0, medida = 0;
 	protected Casilla[][] tablero;
-	public int MAX_Valor_casilla;
+	public int MAX_Valor_casilla = 8;
 	protected int bombas_tablero=0;
     protected int casilla_destapada = 0;
     protected int minas_detectadas = 0;
@@ -15,6 +15,7 @@ public class Tablero {
 		setMedida(nivel);
 		setBombas(nivel);
 		this.tablero=IniciarTablero();
+		crearMinas();
 	}
 	
 	public void mostrar() {
@@ -59,14 +60,97 @@ public class Tablero {
     			System.out.println("Mina detectada!");
     			this.minas_detectadas++;
     			tablero[posX][posY].setMarcado(true);
+    		}else {
+    			System.out.println("No hay mina!");
     		}	
-    	} else {
+    	}else {
     		System.out.println("Incorrecto!");
     	}
 	}
 	
+	public void desmarcarCasilla(int posX, int posY) {
+		if(tablero[posX][posY].getAbierta()==false&&!tablero[posX][posY].getMina()){
+			tablero[posX][posY].setAbierta(false);
+	    	this.casilla_destapada--;
+	    	if(!tablero[posX][posY].getMina()){
+	    		System.out.println("Casilla desmarcada!");
+	    	}
+    	} else {
+    		if(tablero[posX][posY].getMina()){
+    			System.out.println("No la desmarques, es una MINA!");
+	    	}else{
+	    		System.out.println( "Incorrecte!");
+	    	}
+    	}
+	}
+	
 	public void crearMinas() {
-		
+		while(bombas_tablero<getBombas()){
+			//Creacio aleatoria fil,col per insertar mina
+			int fila = (int) Math.floor(Math.random()*getMedida());
+			int columna= (int) Math.floor(Math.random()*getMedida());
+			  
+			//Si no hi hamina en la pos actual -> Posem mina
+			if(this.tablero[fila][columna].getMina()==false){
+				bombas_tablero++;
+				this.tablero[fila][columna].setValor(-1);
+				this.tablero[fila][columna].setMina(true);
+				//Modificar vecinas con 0, 1 o 2 segun cuantas haya cerca de minas
+				for(int i=0;i<MAX_Valor_casilla;i++){
+				switch(i){
+					case 0:
+						if(fila-1>=0&&columna-1>=0){
+							if(this.tablero[fila-1][columna-1].getMina()==false)
+							this.tablero[fila-1][columna-1].setValor(1);
+						}
+						break;
+				    case 1:
+						if(fila-1>=0&&columna>=0){
+							if(this.tablero[fila-1][columna].getMina()==false)
+							this.tablero[fila-1][columna].setValor(1);
+						}
+						break;
+					case 2:
+						if(fila>=0&&columna-1>=0){
+							if(this.tablero[fila][columna-1].getMina()==false)
+							this.tablero[fila][columna-1].setValor(1);
+						}
+						break;				
+					case 3:
+						if(fila+1>=0&&columna+1>=0&&fila<medida-1&&columna<medida-1){
+							if(this.tablero[fila+1][columna+1].getMina()==false)
+							this.tablero[fila+1][columna+1].setValor(1);
+						}
+						break;
+					case 4:
+						if(fila+1>=0&&columna>=0&&fila<medida-1){
+							if(this.tablero[fila+1][columna].getMina()==false)
+							this.tablero[fila+1][columna].setValor(1);
+						}
+						break;
+					case 5:
+						if(fila>=0&&columna+1>=0&&columna<medida-1){
+							if(this.tablero[fila][columna+1].getMina()==false)
+							this.tablero[fila][columna+1].setValor(1);
+						}
+						break;
+					case 6:
+						if(fila-1>=0&&columna+1>=0&&columna<medida-1){
+							if(this.tablero[fila-1][columna+1].getMina()==false)
+							this.tablero[fila-1][columna+1].setValor(1);
+						}
+						break;
+					case 7:
+						if(fila+1>=0&&columna-1>=0&&fila<medida-1){
+							if(this.tablero[fila+1][columna-1].getMina()==false)
+							this.tablero[fila+1][columna-1].setValor(1);
+							
+						}
+						break;
+					}
+				}
+			}
+		}
 	}
 
 	public Casilla[][] IniciarTablero() {
