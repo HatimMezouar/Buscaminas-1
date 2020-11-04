@@ -50,50 +50,60 @@ public class Main {
 			}
 			if(opcion>0 || opcion <5) {
 				switch(opcion) {
-				case 1: 
-					while(!posValida) {
-						System.out.println("Elige una fila:");
-						posX = sc.nextInt();
-						System.out.println("Elige una columna:");
-						posY = sc.nextInt();
-						posValida = partida.posCorrecta(posX-1, posY-1);
-						if(!posValida) {
-							System.out.println("Numeros incorrectos");
+					case 1: 
+						while(!posValida) {
+							System.out.println("Elige una fila:");
+							posX = sc.nextInt();
+							System.out.println("Elige una columna:");
+							posY = sc.nextInt();
+							posValida = partida.posCorrecta(posX-1, posY-1);
+							if(!posValida) {
+								System.out.println("Numeros incorrectos");
+							}
 						}
-					}
-					partida.marcarCasilla(posX-1, posY-1);
-					partida.mostrarTablero();
-					posValida = false;
-					break;
-				case 2:
-					while(!posValida) {
-						System.out.println("Elige una fila:");
-						posX = sc.nextInt();
-						System.out.println("Elige una columna:");
-						posY = sc.nextInt();
-						posValida = partida.posCorrecta(posX-1, posY-1);
-						if(!posValida) {
-							System.out.println("Numeros incorrectos");
+						partida.marcarCasilla(posX-1, posY-1);
+						break;
+					case 2:
+						while(!posValida) {
+							System.out.println("Elige una fila:");
+							posX = sc.nextInt();
+							System.out.println("Elige una columna:");
+							posY = sc.nextInt();
+							posValida = partida.posCorrecta(posX-1, posY-1);
+							if(!posValida) {
+								System.out.println("Numeros incorrectos");
+							}
 						}
-					}
-					partida.desmarcarCasilla(posX-1, posY-1);
-					partida.mostrarTablero();
-					posValida = false;
-					break;
-				case 3: 
-					partida.destaparCasilla();
-					partida.mostrarTablero();
-					break;
-				case 4: 
-					partida.setEnJuego(false);
-					break;
+						partida.desmarcarCasilla(posX-1, posY-1);
+						break;
+					case 3:
+						while(!posValida) {
+							System.out.println("Elige una fila:");
+							posX = sc.nextInt();
+							System.out.println("Elige una columna:");
+							posY = sc.nextInt();
+							posValida = partida.posCorrecta(posX-1, posY-1);
+							if(!posValida) {
+								System.out.println("Numeros incorrectos");
+							}
+						}
+						partida.destaparCasilla(posX-1, posY-1);
+						if(!partida.getEnJuego()) {
+							System.out.println("------------");
+							System.out.println("Has perdido!");
+							System.out.println("------------");
+						}
+						break;
+					case 4: 
+						partida.setEnJuego(false);
+						break;
 				}
-			
 				
+				partida.mostrarTablero();
+				posValida = false;
 			}
 			
 		}
-		
 	}
 	
 }

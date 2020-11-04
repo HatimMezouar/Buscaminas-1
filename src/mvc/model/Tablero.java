@@ -84,6 +84,85 @@ public class Tablero {
     	}
 	}
 	
+	public boolean destaparCasilla(int posX, int posY) {
+		boolean enJuego = true;
+    	int i, vecinos = 8;
+    	if(posX>=0 && posX < getMedida() && posY>=0 && posY < getMedida()) {
+	    	if(tablero[posX][posY].getAbierta()==false) {
+	    		tablero[posX][posY].setAbierta(true);
+		    	this.casilla_destapada++;
+		    	if(tablero[posX][posY].getMina()) {
+		    		System.out.println("MINA!");
+		    		enJuego = false;
+		    	} else if(tablero[posX][posY].getValor()==0&&!tablero[posX][posY].getMina()){
+			    	for(i=0;i<vecinos;i++){
+			    		switch(i){
+			    			case 0:
+			    				if(posX-1>=0&&posY-1>=0){
+			    					if(tablero[posX-1][posY-1].getAbierta()==false&&!(tablero[posX-1][posY-1].getMina())){
+			    						enJuego = destaparCasilla(posX-1,posY-1);
+			    					}
+			    				}
+			    				break;
+			    		    case 1:
+			    				if(posX-1>=0&&posY>=0){
+			    					if(tablero[posX-1][posY].getAbierta()==false&&!(tablero[posX-1][posY].getMina())){
+			    						enJuego = destaparCasilla(posX-1,posY);
+			    					}
+			    				}
+			    				break;
+			    			case 2:
+			    				if(posX>=0&&posY-1>=0){
+			    					if(tablero[posX][posY-1].getAbierta()==false&&!(tablero[posX][posY-1].getMina())){
+			    						enJuego = destaparCasilla(posX,posY-1);
+			    					}
+			    				}
+			    				break;				
+			    			case 3:
+			    				if(posX+1>=0&&posY+1>=0&&posX<medida-1&&posY<medida-1){
+			    					if(tablero[posX+1][posY+1].getAbierta()==false&&!(tablero[posX+1][posY+1].getMina())){
+			    						enJuego = destaparCasilla(posX+1,posY+1);
+			    					}
+			    				}
+			    				break;
+			    			case 4:
+			    				if(posX+1>=0&&posY>=0&&posX<medida-1){
+			    					if(tablero[posX+1][posY].getAbierta()==false&&!(tablero[posX+1][posY].getMina())){
+			    						enJuego = destaparCasilla(posX+1,posY);
+			    					}
+			    				}
+			    				break;
+			    			case 5:
+			    				if(posX>=0&&posY+1>=0&&posY<medida-1){
+			    					if(tablero[posX][posY+1].getAbierta()==false&&!(tablero[posX][posY+1].getMina())){
+			    						enJuego = destaparCasilla(posX,posY+1);
+			    					}
+			    				}
+			    				break;
+			    			case 6:
+			    				if(posX-1>=0&&posY+1>=0&&posY<medida-1){
+			    					if(tablero[posX-1][posY+1].getAbierta()==false&&!(tablero[posX-1][posY+1].getMina())){
+			    						enJuego = destaparCasilla(posX-1,posY+1);
+			    					}
+			    				}
+			    				break;
+			    			case 7:
+			    				if(posX+1>=0&&posY-1>=0&&posX<medida-1){
+			    					if(tablero[posX+1][posY-1].getAbierta()==false&&!(tablero[posX+1][posY-1].getMina())) {
+			    						enJuego = destaparCasilla(posX+1,posY-1);
+			    					}
+			    				}
+			    				break;
+		    			}
+		    		}
+		    	}
+	    	} else {
+	    		System.out.println("Casilla ya destapada");
+	    	}
+    	}
+    	return enJuego;
+	}
+	
 	public void crearMinas() {
 		while(bombas_tablero<getBombas()){
 			//Creacio aleatoria fil,col per insertar mina

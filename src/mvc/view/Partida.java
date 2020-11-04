@@ -48,8 +48,8 @@ public class Partida {
 		tablero.mostrar();
 	}
 	
-	public void destaparCasilla() {
-		
+	public void destaparCasilla(int posX, int posY) {
+		setEnJuego(tablero.destaparCasilla(posX, posY));
 	}
 	
 	public boolean posCorrecta(int posX, int posY) {
