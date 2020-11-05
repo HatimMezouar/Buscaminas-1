@@ -276,5 +276,8 @@ public class Tablero {
     public int getMinasDetectadas() {
     	return minas_detectadas;
     }
+	public Casilla[][] getTablero() {
+		return tablero;
+	}
 
 }
