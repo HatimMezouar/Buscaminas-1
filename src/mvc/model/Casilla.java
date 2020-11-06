@@ -22,19 +22,6 @@ public class Casilla {
 		return (posicionX >= 0 && posicionX < rango) && (posicionY >= 0 && posicionY < rango);
 	}
 	
-	public boolean equals (Object o) 
-	{
-		if (o instanceof Casilla) {
-			Casilla pos = (Casilla) o;
-	        if(posicionX == pos.posicionX && posicionY == pos.posicionY) {
-	        	return true;
-	        }
-	        else 
-	        	return false;        
-	    } 
-		else
-			return false;
-	}
 	
 	public void setPosX(int x) {
 		this.posicionX = x;
@@ -86,4 +73,8 @@ public class Casilla {
 		return abierta;
 	}
 	
+	public String toString()
+	{
+		return "(" + posicionX + "," + posicionY + ")";
+	}
 }
