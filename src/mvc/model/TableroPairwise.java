@@ -11,6 +11,9 @@ public class TableroPairwise {
 	@Test
 	void testObrirCasella() {
 		TableroMock mockObject = Mockito.mock(TableroMock.class);
+		System.out.println(mockObject.getNivel());
+		
+		
 		assertTrue(mockObject.destaparCasilla(0,0));
 		assertTrue(mockObject.destaparCasilla(0, 1));
 		assertTrue(mockObject.destaparCasilla(0, 2));
