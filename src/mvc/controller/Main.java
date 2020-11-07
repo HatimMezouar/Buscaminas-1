@@ -1,11 +1,13 @@
 package mvc.controller;
+import java.io.IOException;
 import java.util.Scanner;
 
+import mvc.model.Puntuaciones;
 import mvc.view.Partida;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		int opcion = 0, posX = 0, posY = 0;
 		boolean posValida = false;
 		
@@ -31,7 +33,7 @@ public class Main {
 				partida.mostrarTablero();
 				break;
 			case 5:
-				System.out.println("¡Vuelve pronto!");
+				System.out.println("ï¿½Vuelve pronto!");
 				sc.close();	
 				break;
 			default:
@@ -58,16 +60,16 @@ public class Main {
 							posY = sc.nextInt();
 							posValida = partida.posCorrecta(posX-1, posY-1);
 							if(!posValida) {
-								System.out.println("Numeros incorrectos");
+								System.out.println("Numeros incorrectos\n");
 							}
 						}
 						partida.marcarCasilla(posX-1, posY-1);
 						break;
 					case 2:
 						while(!posValida) {
-							System.out.println("Elige una fila:");
+							System.out.println("Elige una fila:\n");
 							posX = sc.nextInt();
-							System.out.println("Elige una columna:");
+							System.out.println("Elige una columna:\n");
 							posY = sc.nextInt();
 							posValida = partida.posCorrecta(posX-1, posY-1);
 							if(!posValida) {
@@ -104,6 +106,15 @@ public class Main {
 			}
 			
 		}
+		System.out.println("Nom del jugador?\n");
+		int punts=partida.getPuntuacion();
+		String nom = null; 
+		nom = sc.next();
+		Puntuaciones puntuacion = new Puntuaciones(nom, punts, partida.getNivel());
+		//escrivim puntuacions i mostrem per nivell
+		puntuacion.escrivir_Puntuaciones(punts,partida.getNivel(),nom);
+		puntuacion.mostrar_Puntuaciones(partida.getNivel());
+		sc.close();
 	}
 	
 }

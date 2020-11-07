@@ -67,4 +67,7 @@ public class Partida {
 	public void comprobar() {
 		
 	}
+	public int getPuntuacion() {
+		return tablero.getCasillasDestapadas();
+	}
 }
