@@ -83,7 +83,7 @@ public class CoverageTest {
 		partida.tablero.setBombas(1);
 		partida.tablero.setBombasPartida(0);
 		partida.tablero.MAX_Valor_casilla=0;
-		partida.tablero.inicializar();
+		//partida.tablero.inicializar();
 		partida.tablero.crearMinas();
 	}
 	@Test
@@ -94,7 +94,7 @@ public class CoverageTest {
 		partida.tablero.setBombas(1);
 		partida.tablero.setBombasPartida(0);
 		partida.tablero.MAX_Valor_casilla=1;
-		partida.tablero.inicializar();
+		//partida.tablero.inicializar();
 		partida.tablero.crearMinas();
 	}
 	@Test
@@ -105,7 +105,7 @@ public class CoverageTest {
 		partida.tablero.setBombas(1);
 		partida.tablero.setBombasPartida(0);
 		partida.tablero.MAX_Valor_casilla=2;
-		partida.tablero.inicializar();
+		//partida.tablero.inicializar();
 		partida.tablero.crearMinas();
 	}
 	@Test
@@ -116,7 +116,7 @@ public class CoverageTest {
 		partida.tablero.setBombas(1);
 		partida.tablero.setBombasPartida(0);
 		partida.tablero.MAX_Valor_casilla=8;
-		partida.tablero.inicializar();
+		//partida.tablero.inicializar();
 		partida.tablero.crearMinas();
 	}
 	@Test
@@ -127,7 +127,7 @@ public class CoverageTest {
 		partida.tablero.setBombas(1);
 		partida.tablero.setBombasPartida(0);
 		partida.tablero.MAX_Valor_casilla=7;//partint que valor max=8 n=max-1
-		partida.tablero.inicializar();
+		//partida.tablero.inicializar();
 		partida.tablero.crearMinas();
 	}
 	@Test
@@ -138,7 +138,7 @@ public class CoverageTest {
 		partida.tablero.setBombas(1);
 		partida.tablero.setBombasPartida(0);
 		partida.tablero.MAX_Valor_casilla=5;//partint que valor max=8 n<max-1
-		partida.tablero.inicializar();
+		//partida.tablero.inicializar();
 		partida.tablero.crearMinas();
 	}
 	@Test
@@ -149,7 +149,7 @@ public class CoverageTest {
 		partida.tablero.setBombas(0);
 		partida.tablero.setBombasPartida(0);
 		partida.tablero.MAX_Valor_casilla=8;
-		partida.tablero.inicializar();
+		//partida.tablero.inicializar();
 		partida.tablero.crearMinas();
 	}
 	@Test
@@ -160,7 +160,7 @@ public class CoverageTest {
 		partida.tablero.setBombas(1);
 		partida.tablero.setBombasPartida(0);
 		partida.tablero.MAX_Valor_casilla=8;
-		partida.tablero.inicializar();
+		//partida.tablero.inicializar();
 		partida.tablero.crearMinas();
 	}
 
@@ -172,7 +172,7 @@ public class CoverageTest {
 		partida.tablero.setBombas(2);
 		partida.tablero.setBombasPartida(0);
 		partida.tablero.MAX_Valor_casilla=8;
-		partida.tablero.inicializar();
+		//partida.tablero.inicializar();
 		partida.tablero.crearMinas();
 	}
 	@Test
@@ -183,7 +183,7 @@ public class CoverageTest {
 		partida.tablero.setBombas(5);
 		partida.tablero.setBombasPartida(0);
 		partida.tablero.MAX_Valor_casilla=8;
-		partida.tablero.inicializar();
+		//partida.tablero.inicializar();
 		partida.tablero.crearMinas();
 	}
 	@Test
@@ -194,7 +194,7 @@ public class CoverageTest {
 		partida.tablero.setBombas(4);//partint que valor max=4 n=max-1
 		partida.tablero.setBombasPartida(0);
 		partida.tablero.MAX_Valor_casilla=8;
-		partida.tablero.inicializar();
+		//partida.tablero.inicializar();
 		partida.tablero.crearMinas();
 	}
 	@Test
@@ -205,7 +205,7 @@ public class CoverageTest {
 		partida.tablero.setBombas(3);//partint que valor max=4 n<max-1
 		partida.tablero.setBombasPartida(0);
 		partida.tablero.MAX_Valor_casilla=8;
-		partida.tablero.inicializar();
+		//partida.tablero.inicializar();
 		partida.tablero.crearMinas();
 	}
  //FI loop testing crearMinas

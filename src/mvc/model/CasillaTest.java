@@ -31,16 +31,24 @@ class CasillaTest {
 		
 		Casilla cas3 = new Casilla();
 		Casilla cas4 = new Casilla();
+		Casilla cas5 = new Casilla();
+		Casilla cas6 = new Casilla();
 		cas3.posiciones(5, 4);
 		cas4.posiciones(10, 9);
+		cas5.posiciones(1, 1);
+		cas6.posiciones(14, 14);
 		
 		//Dentro del rango
 		assertTrue(cas3.dentroRango(6));
 		assertTrue(cas4.dentroRango(12));
+		assertTrue(cas5.dentroRango(5));
+		assertTrue(cas6.dentroRango(15));
 		
 		//Fuera de rango
 		assertFalse(cas3.dentroRango(5));
 		assertFalse(cas4.dentroRango(8));
+		assertFalse(cas5.dentroRango(1));
+		assertFalse(cas6.dentroRango(14));
 	}
 	
 	@Test

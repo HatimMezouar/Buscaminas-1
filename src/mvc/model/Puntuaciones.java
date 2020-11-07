@@ -30,9 +30,9 @@ public class Puntuaciones implements Comparable<Puntuaciones>{
 	public int getPuntuacion() {
 		return puntuacion;
 	}
-	public int getPuntuacionesTamaño() {
-		int tamaño=Puntuaciones.size();
-		return tamaño;
+	public int getPuntuacionesTamano() {
+		int tamano=Puntuaciones.size();
+		return tamano;
 	}
 	public ArrayList<Puntuaciones> getPuntuaciones() {
 		return Puntuaciones;

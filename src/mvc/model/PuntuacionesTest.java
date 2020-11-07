@@ -64,8 +64,8 @@ class PuntuacionesTest {
         mockObject.escrivir_Puntuaciones(puntuacio, nivel, nombre);
         try {
         	mockObject.leer_Puntuaciones();
-			assertEquals(0, mockObject.getPuntuacionesTamaño());
-			System.out.println(mockObject.getPuntuacionesTamaño());
+			assertEquals(0, mockObject.getPuntuacionesTamano());
+			System.out.println(mockObject.getPuntuacionesTamano());
 		} catch (IOException e) {
 			assertThrows(FileNotFoundException.class, () -> {e.printStackTrace();});
 		}
@@ -73,7 +73,7 @@ class PuntuacionesTest {
         mockObject.escrivir_Puntuaciones(puntuacio, nivel, nombre);
         try {
         	mockObject.leer_Puntuaciones();
-			assertEquals(2, mockObject.getPuntuacionesTamaño());
+			assertEquals(2, mockObject.getPuntuacionesTamano());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

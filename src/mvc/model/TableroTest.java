@@ -86,25 +86,23 @@ class TableroTest {
 	//Mitjançant un Mock testejem un Tablero (simulant una partida)
 	@Test
 	void testdestaparCasilla() {
-		int nivell = 4;
-		TableroMock mockObject = Mockito.mock(TableroMock.class);
-		int col = 0;
-		int row = 0;
+		int nivell = 1;
+		//TableroMock mockObject = Mockito.mock(TableroMock.class);
+		TableroMock mockObject = new TableroMock(nivell);
 		Casilla[][] tablero = mockObject.getTablero();
-		Casilla Casilla = tablero[row][col];
-		assertTrue(mockObject.destaparCasilla(row, col));
+		Casilla Casilla = tablero[1][1];
+
+		assertTrue(!mockObject.destaparCasilla(1, 1));
 		assertTrue(Casilla.getAbierta());
-		col = -1;
-		row = -1;
-		assertTrue(mockObject.destaparCasilla(row, col));
-		col = 3;
-		row = 3;
-		assertTrue(mockObject.destaparCasilla(row, col));
-		col = 2;
-		row = 2;
-		Casilla = tablero[row][col];
-		assertTrue(mockObject.destaparCasilla(row, col));
-		assertTrue(Casilla.getAbierta());
+		
+		Casilla Casilla1 = tablero[0][0];
+		assertTrue(mockObject.destaparCasilla(0, 0));
+		assertTrue(Casilla1.getAbierta());
+		
+		Casilla Casilla2 = tablero[2][2];
+		assertTrue(!Casilla2.getAbierta());
+		assertTrue(mockObject.destaparCasilla(2, 2));
+		assertTrue(Casilla2.getAbierta());
 	}
 	
 	@Test

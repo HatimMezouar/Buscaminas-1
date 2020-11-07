@@ -39,10 +39,6 @@ public class Tablero {
     	}
 	}
 	
-	public void inicializar() {
-		
-	}
-	
 	public boolean posCorrecta(int posX, int posY) {
 		Casilla posXY = new Casilla();
 		posXY.posiciones(posX, posY);
@@ -87,6 +83,7 @@ public class Tablero {
 	public boolean destaparCasilla(int posX, int posY) {
 		boolean enJuego = true;
     	int i, vecinos = 8;
+    	System.out.println(posX + " - " +posY);
     	if(posX>=0 && posX < getMedida() && posY>=0 && posY < getMedida()) {
 	    	if(tablero[posX][posY].getAbierta()==false) {
 	    		tablero[posX][posY].setAbierta(true);
