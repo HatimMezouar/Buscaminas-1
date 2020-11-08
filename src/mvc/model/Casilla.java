@@ -3,7 +3,8 @@ package mvc.model;
 public class Casilla {
 	
 	private boolean abierta, mina, marcado;
-	private int posicionX, posicionY, valor;
+	private int posicionX, posicionY;
+	protected int valor;
 	
 	public Casilla() {
 		valor = 0;
@@ -35,12 +36,28 @@ public class Casilla {
 		this.abierta = abierta;
 	}
 	
-	public void setValor(int valor) {
-		this.valor = valor;
+	public void setValor(int nuevo_valor) {
+    	if(nuevo_valor == -1 || nuevo_valor == 1) {
+	        if(nuevo_valor!=-1) {
+	        	if(valor < 8) valor=valor+nuevo_valor;
+	        	else valor=8;
+	        }
+	        else {
+	        	valor=-1;
+	        }
+    	}
 	}
 	
-	public void setMina(boolean mina) {
-		this.mina = mina;
+	public void setMina(boolean nueva_mina) {
+        if(mina==true) {
+        	nueva_mina = true;
+    	}
+    	if(valor==-1) {
+    		nueva_mina=true;
+    	}
+    	else {
+    		nueva_mina=false;
+    	}
 	}
 	
 	public void setMarcado(boolean marcado) {

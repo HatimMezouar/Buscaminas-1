@@ -3,7 +3,7 @@ package mvc.model;
 import java.util.Scanner;
 
 public class Tablero {
-	private int nivel = 1, bombas = 0, medida = 0;
+	protected int nivel = 1, bombas = 0, medida = 0;
 	protected Casilla[][] tablero;
 	public int MAX_Valor_casilla = 8;
 	protected int bombas_tablero=0;
@@ -14,8 +14,9 @@ public class Tablero {
 		setNivel(nivel);
 		setMedida(nivel);
 		setBombas(nivel);
-		this.tablero=IniciarTablero();
-		crearMinas();
+		this.tablero=iniciarTablero();
+		//crearMinas();
+		System.out.println("Bombas: " + getBombas());
 	}
 	
 	public void mostrar() {
@@ -229,7 +230,7 @@ public class Tablero {
 		}
 	}
 
-	public Casilla[][] IniciarTablero() {
+	public Casilla[][] iniciarTablero() {
 		this.tablero = new Casilla[medida][medida];
 		for(int i=0; i<this.tablero.length; i++) {
     		for(int j=0; j<this.tablero.length; j++) {

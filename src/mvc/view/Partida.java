@@ -4,7 +4,7 @@ import mvc.model.Tablero;
 public class Partida {
 	
 	public Tablero tablero;
-	protected boolean enJuego;
+	public boolean enJuego;
 	private int nivel;
 	
 	public Partida() {
