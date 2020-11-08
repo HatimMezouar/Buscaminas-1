@@ -112,7 +112,7 @@ public class Main {
 		nom = sc.next();
 		Puntuaciones puntuacion = new Puntuaciones(nom, punts, partida.getNivel());
 		//escrivim puntuacions i mostrem per nivell
-		puntuacion.escrivir_Puntuaciones(punts,partida.getNivel(),nom);
+		puntuacion.escribirPuntuaciones(punts,partida.getNivel(),nom);
 		puntuacion.mostrar_Puntuaciones(partida.getNivel());
 		sc.close();
 	}

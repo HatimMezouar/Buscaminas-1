@@ -53,8 +53,9 @@ public class Puntuaciones implements Comparable<Puntuaciones>{
 		this.name = name;
 	}
 	
-	public void escrivir_Puntuaciones(int puntuacion,int nivel, String Nom) {
+	public void escribirPuntuaciones(int puntuacion,int nivel, String Nom) {
         try {
+        	
             String contenido = Nom+" "+puntuacion+" "+nivel;
             File file = new File(ruta);
             // Si el archivo no existe es creado
@@ -75,6 +76,7 @@ public class Puntuaciones implements Comparable<Puntuaciones>{
 		String cadena;
 		String[] c;
 		FileReader f = new FileReader(ruta);
+		Puntuaciones.clear();
 	    BufferedReader b = new BufferedReader(f);
 	    while((cadena = b.readLine())!=null) {
 	    	c=cadena.split(" ");

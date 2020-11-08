@@ -20,16 +20,17 @@ class PuntuacionesTest {
     @Test
     void testEscriurePuntuacions() {
     	
-        String ruta = "puntuacionesMock.txt";
+        String ruta = "puntuacionsMock.txt";
         String nombre = "nombre";
         int puntuacio = 100;
         int nivel = 1;
-        PuntuacionesMock mockObject = Mockito.mock(PuntuacionesMock.class);
+        //PuntuacionesMock mockObject = Mockito.mock(PuntuacionesMock.class);
+        PuntuacionesMock mockObject = new PuntuacionesMock(nombre, puntuacio, nivel);
         mockObject.setPuntuacionesMock(nombre, puntuacio, nivel);
-        mockObject.escrivir_Puntuaciones(puntuacio, nivel, nombre);
+        mockObject.escribirPuntuaciones(puntuacio, nivel, nombre);
         try {
-	        File file = new File(ruta);
 	        // L'arxiu ha d'existir
+        	File file = new File(ruta);
 	        assertTrue(file.exists());
 	        
 	        BufferedReader br = new BufferedReader(new FileReader(file));
@@ -59,25 +60,26 @@ class PuntuacionesTest {
         String nombre = "nombre";
         int puntuacio = 100;
         int nivel = 1;
-        PuntuacionesMock mockObject = Mockito.mock(PuntuacionesMock.class);
+        //PuntuacionesMock mockObject = Mockito.mock(PuntuacionesMock.class);
+        PuntuacionesMock mockObject = new PuntuacionesMock(nombre, puntuacio, nivel);
         mockObject.setPuntuacionesMock(nombre, puntuacio, nivel);
-        mockObject.escrivir_Puntuaciones(puntuacio, nivel, nombre);
+        mockObject.escribirPuntuaciones(puntuacio, nivel, nombre);
         try {
         	mockObject.leer_Puntuaciones();
-			assertEquals(0, mockObject.getPuntuacionesTamano());
-			System.out.println(mockObject.getPuntuacionesTamano());
+			assertEquals(1, mockObject.getPuntuacionesTamano());
 		} catch (IOException e) {
 			assertThrows(FileNotFoundException.class, () -> {e.printStackTrace();});
 		}
-        mockObject.escrivir_Puntuaciones(puntuacio, nivel, nombre);
-        mockObject.escrivir_Puntuaciones(puntuacio, nivel, nombre);
+        mockObject.escribirPuntuaciones(puntuacio, nivel, nombre);
+        mockObject.escribirPuntuaciones(puntuacio, nivel, nombre);
         try {
         	mockObject.leer_Puntuaciones();
-			assertEquals(2, mockObject.getPuntuacionesTamano());
+        	System.out.println(mockObject.getPuntuacionesTamano());
+			assertEquals(3, mockObject.getPuntuacionesTamano());
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-        mockObject.esborrarMock();
+        //mockObject.esborrarMock();
     }
     //Test mostrar_puntuacions
     //Per comprovar que les puntuacions es mostren correctament (nivel i puntuacio)
@@ -86,13 +88,13 @@ class PuntuacionesTest {
     	String nombre = "nombre1";
         int puntuacion = 100;
         int nivel = 1;
-        PuntuacionesMock mockObject = Mockito.mock(PuntuacionesMock.class);
+        PuntuacionesMock mockObject = new PuntuacionesMock(nombre, puntuacion, nivel);
         mockObject.setPuntuacionesMock(nombre, puntuacion, nivel);
-        mockObject.escrivir_Puntuaciones(puntuacion, nivel, nombre);
+        mockObject.escribirPuntuaciones(puntuacion, nivel, nombre);
         nombre = "nombre2";
         puntuacion = 200;
         nivel = 2;
-        mockObject.escrivir_Puntuaciones(puntuacion, nivel, nombre);
+        mockObject.escribirPuntuaciones(puntuacion, nivel, nombre);
         try {
         	mockObject.mostrar_Puntuaciones(1);
         	mockObject.mostrar_Puntuaciones(2);
