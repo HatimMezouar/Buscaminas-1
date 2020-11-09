@@ -1,6 +1,6 @@
 package mvc.model;
 
-import org.mockito.*;
+
 import static org.junit.Assert.*;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -163,5 +163,126 @@ class TableroTest {
 		assertTrue(!tab4.posCorrecta(20, 20));
 		assertTrue(!tab4.posCorrecta(20, -1));
 		assertTrue(!tab4.posCorrecta(-1, 20));
+	}
+	//Mitjançant un Mock testejem un Tablero (simulant una partida)
+	@Test
+	void testComprovarVecionsTablero() {
+		int nivell = 1;
+		//TableroMock mockObject = Mockito.mock(TableroMock.class);
+		TableroMock mockObject = new TableroMock(nivell);
+
+		mockObject.destaparCasilla(0,4);
+		assertTrue(!mockObject.tablero[0][0].getAbierta());
+		assertTrue(mockObject.tablero[0][1].getAbierta());
+		assertTrue(mockObject.tablero[0][2].getAbierta());
+		assertTrue(mockObject.tablero[0][3].getAbierta());
+		assertTrue(mockObject.tablero[0][4].getAbierta());
+		assertTrue(!mockObject.tablero[1][0].getAbierta());
+		assertTrue(mockObject.tablero[1][1].getAbierta());
+		assertTrue(mockObject.tablero[1][2].getAbierta());
+		assertTrue(mockObject.tablero[1][3].getAbierta());
+		assertTrue(mockObject.tablero[1][4].getAbierta());
+		assertTrue(!mockObject.tablero[2][0].getAbierta());
+		assertTrue(!mockObject.tablero[2][1].getAbierta());
+		assertTrue(!mockObject.tablero[2][2].getAbierta());
+		assertTrue(!mockObject.tablero[2][3].getAbierta());
+		assertTrue(!mockObject.tablero[2][4].getAbierta());
+		assertTrue(!mockObject.tablero[3][0].getAbierta());
+		assertTrue(!mockObject.tablero[3][1].getAbierta());
+		assertTrue(!mockObject.tablero[3][2].getAbierta());
+		assertTrue(!mockObject.tablero[3][3].getAbierta());
+		assertTrue(!mockObject.tablero[3][4].getAbierta());
+		assertTrue(!mockObject.tablero[4][0].getAbierta());
+		assertTrue(!mockObject.tablero[4][1].getAbierta());
+		assertTrue(!mockObject.tablero[4][2].getAbierta());
+		assertTrue(!mockObject.tablero[4][3].getAbierta());
+		assertTrue(!mockObject.tablero[4][4].getAbierta());
+		
+		mockObject.destaparCasilla(4,3);
+		mockObject.destaparCasilla(4,0);
+		assertTrue(!mockObject.tablero[0][0].getAbierta());
+		assertTrue(mockObject.tablero[0][1].getAbierta());
+		assertTrue(mockObject.tablero[0][2].getAbierta());
+		assertTrue(mockObject.tablero[0][3].getAbierta());
+		assertTrue(mockObject.tablero[0][4].getAbierta());
+		assertTrue(mockObject.tablero[1][0].getAbierta());
+		assertTrue(mockObject.tablero[1][1].getAbierta());
+		assertTrue(mockObject.tablero[1][2].getAbierta());
+		assertTrue(mockObject.tablero[1][3].getAbierta());
+		assertTrue(mockObject.tablero[1][4].getAbierta());
+		assertTrue(mockObject.tablero[2][0].getAbierta());
+		assertTrue(mockObject.tablero[2][1].getAbierta());
+		assertTrue(!mockObject.tablero[2][2].getAbierta());
+		assertTrue(!mockObject.tablero[2][3].getAbierta());
+		assertTrue(!mockObject.tablero[2][4].getAbierta());
+		assertTrue(mockObject.tablero[3][0].getAbierta());
+		assertTrue(mockObject.tablero[3][1].getAbierta());
+		assertTrue(!mockObject.tablero[3][2].getAbierta());
+		assertTrue(!mockObject.tablero[3][3].getAbierta());
+		assertTrue(!mockObject.tablero[3][4].getAbierta());
+		assertTrue(mockObject.tablero[4][0].getAbierta());
+		assertTrue(mockObject.tablero[4][1].getAbierta());
+		assertTrue(!mockObject.tablero[4][2].getAbierta());
+		assertTrue(mockObject.tablero[4][3].getAbierta());
+		assertTrue(!mockObject.tablero[4][4].getAbierta());
+		
+		mockObject.destaparCasilla(4,4);
+		mockObject.destaparCasilla(2,4);
+		assertTrue(!mockObject.tablero[0][0].getAbierta());
+		assertTrue(mockObject.tablero[0][1].getAbierta());
+		assertTrue(mockObject.tablero[0][2].getAbierta());
+		assertTrue(mockObject.tablero[0][3].getAbierta());
+		assertTrue(mockObject.tablero[0][4].getAbierta());
+		assertTrue(mockObject.tablero[1][0].getAbierta());
+		assertTrue(mockObject.tablero[1][1].getAbierta());
+		assertTrue(mockObject.tablero[1][2].getAbierta());
+		assertTrue(mockObject.tablero[1][3].getAbierta());
+		assertTrue(mockObject.tablero[1][4].getAbierta());
+		assertTrue(mockObject.tablero[2][0].getAbierta());
+		assertTrue(mockObject.tablero[2][1].getAbierta());
+		assertTrue(!mockObject.tablero[2][2].getAbierta());
+		assertTrue(!mockObject.tablero[2][3].getAbierta());
+		assertTrue(mockObject.tablero[2][4].getAbierta());
+		assertTrue(mockObject.tablero[3][0].getAbierta());
+		assertTrue(mockObject.tablero[3][1].getAbierta());
+		assertTrue(!mockObject.tablero[3][2].getAbierta());
+		assertTrue(!mockObject.tablero[3][3].getAbierta());
+		assertTrue(!mockObject.tablero[3][4].getAbierta());
+		assertTrue(mockObject.tablero[4][0].getAbierta());
+		assertTrue(mockObject.tablero[4][1].getAbierta());
+		assertTrue(!mockObject.tablero[4][2].getAbierta());
+		assertTrue(mockObject.tablero[4][3].getAbierta());
+		assertTrue(mockObject.tablero[4][4].getAbierta());
+		
+		mockObject.destaparCasilla(4,2);
+		mockObject.destaparCasilla(3,4);
+		mockObject.destaparCasilla(2,2);
+		assertTrue(!mockObject.tablero[0][0].getAbierta());
+		assertTrue(mockObject.tablero[0][1].getAbierta());
+		assertTrue(mockObject.tablero[0][2].getAbierta());
+		assertTrue(mockObject.tablero[0][3].getAbierta());
+		assertTrue(mockObject.tablero[0][4].getAbierta());
+		assertTrue(mockObject.tablero[1][0].getAbierta());
+		assertTrue(mockObject.tablero[1][1].getAbierta());
+		assertTrue(mockObject.tablero[1][2].getAbierta());
+		assertTrue(mockObject.tablero[1][3].getAbierta());
+		assertTrue(mockObject.tablero[1][4].getAbierta());
+		assertTrue(mockObject.tablero[2][0].getAbierta());
+		assertTrue(mockObject.tablero[2][1].getAbierta());
+		assertTrue(mockObject.tablero[2][2].getAbierta());
+		assertTrue(!mockObject.tablero[2][3].getAbierta());
+		assertTrue(mockObject.tablero[2][4].getAbierta());
+		assertTrue(mockObject.tablero[3][0].getAbierta());
+		assertTrue(mockObject.tablero[3][1].getAbierta());
+		assertTrue(!mockObject.tablero[3][2].getAbierta());
+		assertTrue(!mockObject.tablero[3][3].getAbierta());
+		assertTrue(mockObject.tablero[3][4].getAbierta());
+		assertTrue(mockObject.tablero[4][0].getAbierta());
+		assertTrue(mockObject.tablero[4][1].getAbierta());
+		assertTrue(mockObject.tablero[4][2].getAbierta());
+		assertTrue(mockObject.tablero[4][3].getAbierta());
+		assertTrue(mockObject.tablero[4][4].getAbierta());
+		mockObject.mostrar();
+
 	}
 }
