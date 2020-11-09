@@ -224,27 +224,25 @@ public class CoverageTest {
 	}
 	@Test
 	void testLoopMostrarTaulellv2() {
-		Tablero tablero = new Tablero(1);
+		Tablero tablero = new Tablero(2);
 		tablero.setMedida(2);
-		tablero.tablero[1][1].getAbierta();
-		tablero.tablero[1][1].getMina();
 		tablero.mostrar();
 	}
 	@Test
 	void testLoopMostrarTaulellv3() {
-		Tablero tablero = new Tablero(1);
+		Tablero tablero = new Tablero(3);
 		tablero.setMedida(3);
 		tablero.mostrar();
 	}
 	@Test
 	void testLoopMostrarTaulellv4() {
-		Tablero tablero = new Tablero(1);
+		Tablero tablero = new Tablero(4);
 		tablero.setMedida(4);
 		tablero.mostrar();
 	}
 	@Test
 	void testLoopMostrarTaulellv5() {
-		Tablero tablero = new Tablero(1);
+		Tablero tablero = new Tablero(5);
 		tablero.setMedida(5);
 		tablero.mostrar();
 	}

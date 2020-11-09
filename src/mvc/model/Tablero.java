@@ -85,6 +85,7 @@ public class Tablero {
 		boolean enJuego = true;
     	int i, vecinos = 8;
     	System.out.println(posX + " - " +posY);
+    	System.out.println( this.tablero[posX][posY].getValor());
     	if(posX>=0 && posX < getMedida() && posY>=0 && posY < getMedida()) {
 	    	if(tablero[posX][posY].getAbierta()==false) {
 	    		tablero[posX][posY].setAbierta(true);
@@ -92,6 +93,7 @@ public class Tablero {
 		    	if(tablero[posX][posY].getMina()) {
 		    		System.out.println("MINA!");
 		    		enJuego = false;
+		    		
 		    	} else if(tablero[posX][posY].getValor()==0&&!tablero[posX][posY].getMina()){
 			    	for(i=0;i<vecinos;i++){
 			    		switch(i){
@@ -155,6 +157,7 @@ public class Tablero {
 		    		}
 		    	}
 	    	} else {
+	    		
 	    		System.out.println("Casilla ya destapada");
 	    	}
     	}
@@ -169,7 +172,8 @@ public class Tablero {
 			  
 			//Si no hi hamina en la pos actual -> Posem mina
 			if(this.tablero[fila][columna].getMina()==false){
-				bombas_tablero++;
+				
+				setBombasPartida(1);
 				this.tablero[fila][columna].setValor(-1);
 				this.tablero[fila][columna].setMina(true);
 				//Modificar vecinas con 0, 1 o 2 segun cuantas haya cerca de minas
@@ -235,6 +239,7 @@ public class Tablero {
 		for(int i=0; i<this.tablero.length; i++) {
     		for(int j=0; j<this.tablero.length; j++) {
     			this.tablero[i][j] = new Casilla();
+    			
     		}
     	}
 		return this.tablero;
@@ -251,7 +256,7 @@ public class Tablero {
 		this.medida = medida*5;
 	}
 	public void setBombasPartida(int bombas_tablero) {
-		this.bombas_tablero = bombas_tablero;
+		this.bombas_tablero = this.bombas_tablero+bombas_tablero;
 	}
 	public int getNivel() {
 		return nivel;

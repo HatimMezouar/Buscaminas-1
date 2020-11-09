@@ -37,15 +37,18 @@ public class Casilla {
 	}
 	
 	public void setValor(int nuevo_valor) {
-    	if(nuevo_valor == -1 || nuevo_valor == 1) {
-	        if(nuevo_valor!=-1) {
-	        	if(valor < 8) valor=valor+nuevo_valor;
-	        	else valor=8;
-	        }
-	        else {
-	        	valor=-1;
-	        }
-    	}
+		if(!(this.valor==-1))
+		{
+	    	if(nuevo_valor == -1 || nuevo_valor == 1) {
+		        if(nuevo_valor>-1) {
+		        	if(valor < 8) valor=valor+nuevo_valor;
+		        	else valor=8;
+		        }
+		        else {
+		        	valor=-1;
+		        }
+	    	}
+		}
 	}
 	
 	public void setMina(boolean nueva_mina) {
@@ -54,6 +57,7 @@ public class Casilla {
     	}
     	if(valor==-1) {
     		nueva_mina=true;
+    		this.valor=-1;
     	}
     	else {
     		nueva_mina=false;
