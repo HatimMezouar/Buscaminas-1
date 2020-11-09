@@ -30,7 +30,6 @@ public class TableroMock extends Tablero{
 		
 	}
 	public void MockcrearMinas(int []valores) {
-	    System.out.println("bombas"+getBombas());
 	    int fila =valores[bombas_tablero];
 		int columna=valores[bombas_tablero];
 		while(bombas_tablero<getBombas()){
@@ -43,7 +42,6 @@ public class TableroMock extends Tablero{
 				setBombasPartida(1);
 				this.tablero[fila][columna].setValor(-1);
 				this.tablero[fila][columna].setMina(true);
-				System.out.println("Mina "+this.tablero[fila][columna].getMina()+" valor"+this.tablero[fila][columna].getValor()); 
 				//Modificar vecinas con 0, 1 o 2 segun cuantas haya cerca de minas
 				for(int i=0;i<MAX_Valor_casilla;i++){
 				switch(i){

@@ -90,9 +90,10 @@ class TableroTest {
 		//TableroMock mockObject = Mockito.mock(TableroMock.class);
 		TableroMock mockObject = new TableroMock(nivell);
 		Casilla[][] tablero = mockObject.getTablero();
-		Casilla Casilla = tablero[1][1];
-
-		assertTrue(!mockObject.destaparCasilla(1, 1));
+		Casilla Casilla = tablero[0][0];
+		
+		System.out.println(mockObject.tablero[0][0].getValor());
+		assertTrue(!mockObject.destaparCasilla(0, 0));
 		assertTrue(Casilla.getAbierta());
 		
 		Casilla Casilla1 = tablero[0][0];

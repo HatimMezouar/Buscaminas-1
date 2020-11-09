@@ -15,8 +15,7 @@ public class Tablero {
 		setMedida(nivel);
 		setBombas(nivel);
 		this.tablero=iniciarTablero();
-		//crearMinas();
-		System.out.println("Bombas: " + getBombas());
+		crearMinas();
 	}
 	
 	public void mostrar() {
@@ -84,8 +83,6 @@ public class Tablero {
 	public boolean destaparCasilla(int posX, int posY) {
 		boolean enJuego = true;
     	int i, vecinos = 8;
-    	System.out.println(posX + " - " +posY);
-    	System.out.println( this.tablero[posX][posY].getValor());
     	if(posX>=0 && posX < getMedida() && posY>=0 && posY < getMedida()) {
 	    	if(tablero[posX][posY].getAbierta()==false) {
 	    		tablero[posX][posY].setAbierta(true);
@@ -93,7 +90,6 @@ public class Tablero {
 		    	if(tablero[posX][posY].getMina()) {
 		    		System.out.println("MINA!");
 		    		enJuego = false;
-		    		
 		    	} else if(tablero[posX][posY].getValor()==0&&!tablero[posX][posY].getMina()){
 			    	for(i=0;i<vecinos;i++){
 			    		switch(i){
@@ -176,6 +172,8 @@ public class Tablero {
 				setBombasPartida(1);
 				this.tablero[fila][columna].setValor(-1);
 				this.tablero[fila][columna].setMina(true);
+				/*System.out.print(this.tablero[fila][columna].getMina()+ "\n");
+				System.out.print(this.tablero[fila][columna].getValor()+ "\n");*/
 				//Modificar vecinas con 0, 1 o 2 segun cuantas haya cerca de minas
 				for(int i=0;i<MAX_Valor_casilla;i++){
 				switch(i){

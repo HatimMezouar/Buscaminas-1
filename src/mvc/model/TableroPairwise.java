@@ -13,7 +13,7 @@ public class TableroPairwise {
 		int nivel=1;
 		TableroMock mockObject = new TableroMock(nivel);
 		System.out.println(mockObject.getNivel());
-		assertTrue(mockObject.destaparCasilla(0,0));
+		assertTrue(!mockObject.destaparCasilla(0,0));
 		assertTrue(mockObject.destaparCasilla(0,1));
 		assertTrue(mockObject.destaparCasilla(0, 2));
 		assertTrue(mockObject.destaparCasilla(0, 3));
@@ -26,12 +26,12 @@ public class TableroPairwise {
 		assertTrue(mockObject.destaparCasilla(2, 0));
 		assertTrue(mockObject.destaparCasilla(2, 1));
 		assertTrue(mockObject.destaparCasilla(2, 2));
-		assertTrue(mockObject.destaparCasilla(2, 3));
+		assertTrue(!mockObject.destaparCasilla(2, 3));
 		assertTrue(mockObject.destaparCasilla(2, 4));
 		assertTrue(mockObject.destaparCasilla(3, 0));
 		assertTrue(mockObject.destaparCasilla(3, 1));
-		assertTrue(mockObject.destaparCasilla(3, 2));
-		assertTrue(mockObject.destaparCasilla(3, 3));
+		assertTrue(!mockObject.destaparCasilla(3, 2));
+		assertTrue(!mockObject.destaparCasilla(3, 3));
 		assertTrue(mockObject.destaparCasilla(3, 4));
 		assertTrue(mockObject.destaparCasilla(4, 0));
 		assertTrue(mockObject.destaparCasilla(4, 1));

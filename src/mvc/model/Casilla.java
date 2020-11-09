@@ -52,16 +52,7 @@ public class Casilla {
 	}
 	
 	public void setMina(boolean nueva_mina) {
-        if(mina==true) {
-        	nueva_mina = true;
-    	}
-    	if(valor==-1) {
-    		nueva_mina=true;
-    		this.valor=-1;
-    	}
-    	else {
-    		nueva_mina=false;
-    	}
+		this.mina = nueva_mina;
 	}
 	
 	public void setMarcado(boolean marcado) {
