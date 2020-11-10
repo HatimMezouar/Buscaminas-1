@@ -253,11 +253,25 @@ public class Tablero {
 	}
 	
 	public void setBombas(int bombas) {
-		this.bombas = bombas*5;
+		if(bombas > 4) {
+			this.bombas = 20;
+		}else if(bombas<1) {
+			this.bombas = 5;
+		}else {
+			this.bombas = bombas * 5;
+		}
+		//this.bombas = bombas*5;
 	}
 	
 	public void setMedida(int medida) {
-		this.medida = medida*5;
+		if(medida > 4) {
+			this.medida = 20;
+		}else if(medida<1) {
+			this.medida = 5;
+		}else {
+			this.medida = medida * 5;
+		}
+		//this.medida = medida*5;
 	}
 	public void setBombasPartida(int bombas_tablero) {
 		this.bombas_tablero = this.bombas_tablero+bombas_tablero;

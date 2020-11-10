@@ -10,9 +10,12 @@ class TableroTest {
 	//Test per la inicialitzacio de taulell
 	@Test
 	void testInicializarTablero() {	
-		
-		int nivel=4;
+		int nivel=5;
 		Tablero partida=new Tablero(nivel);
+		partida.setNivel(nivel);
+		partida.setMedida(nivel);
+		assertEquals(partida.getMedida(), 20);
+		nivel=4;
 		partida.setNivel(nivel);
 		partida.setMedida(nivel);
 		assertEquals(partida.getMedida(), 20);
@@ -25,6 +28,10 @@ class TableroTest {
 		partida.setMedida(nivel);
 		assertEquals(partida.getMedida(), 10);
 		nivel=1;
+		partida.setNivel(nivel);
+		partida.setMedida(nivel);
+		assertEquals(partida.getMedida(), 5);
+		nivel=0;
 		partida.setNivel(nivel);
 		partida.setMedida(nivel);
 		assertEquals(partida.getMedida(), 5);
@@ -83,6 +90,32 @@ class TableroTest {
     		}
 		}
 		assertEquals(5, mines);
+		
+		nivell = 0;
+		mines = 0;
+		partida = new Tablero(nivell);
+		Tablero = partida.getTablero();
+		for(int i=0; i<partida.getMedida(); i++) {
+    		for(int j=0; j<partida.getMedida(); j++) {
+    			if (Tablero[i][j].getMina()) {
+					mines++;
+				}
+    		}
+		}
+		assertEquals(5, mines);
+		
+		nivell = 5;
+		mines = 0;
+		partida = new Tablero(nivell);
+		Tablero = partida.getTablero();
+		for(int i=0; i<partida.getMedida(); i++) {
+    		for(int j=0; j<partida.getMedida(); j++) {
+    			if (Tablero[i][j].getMina()) {
+					mines++;
+				}
+    		}
+		}
+		assertEquals(20, mines);
 		
 	}
 	//Mitjançant un Mock testejem un Tablero (simulant una partida)
