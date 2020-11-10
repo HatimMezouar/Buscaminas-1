@@ -10,6 +10,7 @@ class TableroTest {
 	//Test per la inicialitzacio de taulell
 	@Test
 	void testInicializarTablero() {	
+		
 		int nivel=4;
 		Tablero partida=new Tablero(nivel);
 		partida.setNivel(nivel);
@@ -27,6 +28,7 @@ class TableroTest {
 		partida.setNivel(nivel);
 		partida.setMedida(nivel);
 		assertEquals(partida.getMedida(), 5);
+
 	}
 	//Test per comprovar que l'assignacio de mines segons el nivel es correcte
 	@Test
@@ -89,21 +91,19 @@ class TableroTest {
 		int nivell = 1;
 		//TableroMock mockObject = Mockito.mock(TableroMock.class);
 		TableroMock mockObject = new TableroMock(nivell);
-		Casilla[][] tablero = mockObject.getTablero();
-		Casilla Casilla = tablero[0][0];
+
 		
 		System.out.println(mockObject.tablero[0][0].getValor());
 		assertTrue(!mockObject.destaparCasilla(0, 0));
-		assertTrue(Casilla.getAbierta());
+		assertTrue(mockObject.tablero[0][0].getAbierta());
 		
-		Casilla Casilla1 = tablero[0][0];
+	
 		assertTrue(mockObject.destaparCasilla(0, 0));
-		assertTrue(Casilla1.getAbierta());
-		
-		Casilla Casilla2 = tablero[2][2];
-		assertTrue(!Casilla2.getAbierta());
+		assertTrue(mockObject.tablero[0][0].getAbierta());
+
+		assertTrue(!mockObject.tablero[2][2].getAbierta());
 		assertTrue(mockObject.destaparCasilla(2, 2));
-		assertTrue(Casilla2.getAbierta());
+		assertTrue(mockObject.tablero[2][2].getAbierta());
 	}
 	
 	@Test

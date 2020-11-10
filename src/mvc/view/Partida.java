@@ -12,10 +12,8 @@ public class Partida {
 	}
 	
 	public int continuarJuego(String input) {
-		switch (input) {
-			case "S":
+		switch (input.toLowerCase()) {
 			case "s": return 0;
-			case "N":
 			case "n": return 1;
 			default: return -1;
 		}

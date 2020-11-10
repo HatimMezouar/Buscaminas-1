@@ -18,7 +18,7 @@ class PuntuacionesTest {
 	//Clase per testejar les puntuacions mitjançant el Mock 
 	//ja que hem de veure si es capaç  de llegir un archiu encara que no existexi i fer el que pertoca
     @Test
-    void testEscriurePuntuacions() {
+    void testEscrivirPuntuaciones() {
     	
         String ruta = "puntuacionsMock.txt";
         String nombre = "nombre";
@@ -56,7 +56,7 @@ class PuntuacionesTest {
     //Test llegir_puntuacions
     //Per comprovar que les puntuacions son llegides correctament
     @Test
-    void testLlegirPuntuacions() {
+    void testLeerPuntuaciones() {
         String nombre = "nombre";
         int puntuacio = 100;
         int nivel = 1;
@@ -84,7 +84,7 @@ class PuntuacionesTest {
     //Test mostrar_puntuacions
     //Per comprovar que les puntuacions es mostren correctament (nivel i puntuacio)
     @Test
-    void testMostrarPuntuacions() {
+    void testMostrarPuntuaciones() {
     	String nombre = "nombre1";
         int puntuacion = 100;
         int nivel = 1;

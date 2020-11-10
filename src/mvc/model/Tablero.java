@@ -243,7 +243,13 @@ public class Tablero {
 		return this.tablero;
 	}
 	public void setNivel(int nivel) {
-		this.nivel = nivel;
+		if(nivel > 4) {
+			this.nivel = 4;
+		}else if(nivel<1) {
+			this.nivel = 1;
+		}else {
+			this.nivel = nivel;
+		}
 	}
 	
 	public void setBombas(int bombas) {
