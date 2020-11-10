@@ -1,10 +1,10 @@
-package mvc.controller;
+package mvc.view;
 import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import mvc.controller.Partida;
 import mvc.model.Puntuaciones;
-import mvc.view.Partida;
 
 public class Main {
 

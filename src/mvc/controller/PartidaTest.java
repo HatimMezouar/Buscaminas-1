@@ -1,4 +1,4 @@
-package mvc.view;
+package mvc.controller;
 
 import static org.junit.jupiter.api.Assertions.*;
 

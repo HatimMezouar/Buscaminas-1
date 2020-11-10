@@ -1,4 +1,4 @@
-package mvc.view;
+package mvc.controller;
 import mvc.model.Tablero;
 
 public class Partida {

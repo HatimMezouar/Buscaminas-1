@@ -3,7 +3,7 @@ package mvc.model;
 
 import org.junit.jupiter.api.Test;
 
-import mvc.view.Partida;
+import mvc.controller.Partida;
 
 public class CoverageTest {
 	//Per realitzar diferents test de coverage amb el valor de la casilla
