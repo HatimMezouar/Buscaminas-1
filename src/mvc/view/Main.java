@@ -151,7 +151,7 @@ public class Main {
 					//escrivim puntuacions i mostrem per nivell
 					puntuacion.escribirPuntuaciones(punts,partida.getNivel(),nom);
 					puntuacion.mostrar_Puntuaciones(partida.getNivel());
-
+					entrada = false;
 				}
 				sc.close();
 			}catch(InputMismatchException ex) {
