@@ -40,7 +40,7 @@ public class Casilla {
 		if(!(this.valor==-1))
 		{
 	    	if(nuevo_valor == -1 || nuevo_valor == 1) {
-		        if(nuevo_valor>-1) {
+		        if(nuevo_valor>0) {
 		        	if(valor < 8) valor=valor+nuevo_valor;
 		        	else valor=8;
 		        }

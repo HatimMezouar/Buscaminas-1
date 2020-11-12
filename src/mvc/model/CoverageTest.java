@@ -17,6 +17,7 @@ public class CoverageTest {
 		casilla.valor = 8;
 		casilla.setValor(1);
 		casilla.setValor(-1);
+		
 	}
 	//Per realitzar diferents test de coverage amb l'atribut esmina de la casilla
 	//(s'ha de jugar amb els valors)
@@ -39,7 +40,7 @@ public class CoverageTest {
 		Partida partida = new Partida();
 		partida.setNivel(nivell);
 		//partida.setEnJuego()=true;
-		
+
 		//primer if false
 		partida.setEnJuego(false);
 		//partida.comprobar();
@@ -83,7 +84,7 @@ public class CoverageTest {
 		partida.tablero.setBombasPartida(0);
 		partida.tablero.MAX_Valor_casilla=0;
 		partida.tablero.iniciarTablero();
-		partida.tablero.crearMinas();
+		//partida.tablero.crearMinas();
 	}
 	@Test
 	void testLoopInteriorv1() {
@@ -94,7 +95,7 @@ public class CoverageTest {
 		partida.tablero.setBombasPartida(0);
 		partida.tablero.MAX_Valor_casilla=1;
 		partida.tablero.iniciarTablero();
-		partida.tablero.crearMinas();
+		//partida.tablero.crearMinas();
 	}
 	@Test
 	void testLoopInteriorv2() {
@@ -105,7 +106,7 @@ public class CoverageTest {
 		partida.tablero.setBombasPartida(0);
 		partida.tablero.MAX_Valor_casilla=2;
 		partida.tablero.iniciarTablero();
-		partida.tablero.crearMinas();
+		//partida.tablero.crearMinas();
 	}
 	@Test
 	void testLoopSimpleInteriorv8() {
@@ -116,7 +117,7 @@ public class CoverageTest {
 		partida.tablero.setBombasPartida(0);
 		partida.tablero.MAX_Valor_casilla=8;
 		partida.tablero.iniciarTablero();
-		partida.tablero.crearMinas();
+		//partida.tablero.crearMinas();
 	}
 	@Test
 	void testLoopInteriorv7() {
@@ -127,7 +128,7 @@ public class CoverageTest {
 		partida.tablero.setBombasPartida(0);
 		partida.tablero.MAX_Valor_casilla=7;//partint que valor max=8 n=max-1
 		partida.tablero.iniciarTablero();
-		partida.tablero.crearMinas();
+		//partida.tablero.crearMinas();
 	}
 	@Test
 	void testLoopInteriorvn() {
@@ -138,7 +139,7 @@ public class CoverageTest {
 		partida.tablero.setBombasPartida(0);
 		partida.tablero.MAX_Valor_casilla=5;//partint que valor max=8 n<max-1
 		partida.tablero.iniciarTablero();
-		partida.tablero.crearMinas();
+		//partida.tablero.crearMinas();
 	}
 	@Test
 	void testLoopExteriorv0() {
@@ -149,7 +150,7 @@ public class CoverageTest {
 		partida.tablero.setBombasPartida(0);
 		partida.tablero.MAX_Valor_casilla=8;
 		partida.tablero.iniciarTablero();
-		partida.tablero.crearMinas();
+		//partida.tablero.crearMinas();
 	}
 	@Test
 	void testLoopExteriorv1() {
@@ -160,7 +161,7 @@ public class CoverageTest {
 		partida.tablero.setBombasPartida(0);
 		partida.tablero.MAX_Valor_casilla=8;
 		partida.tablero.iniciarTablero();
-		partida.tablero.crearMinas();
+		//partida.tablero.crearMinas();
 	}
 
 	@Test
@@ -172,7 +173,7 @@ public class CoverageTest {
 		partida.tablero.setBombasPartida(0);
 		partida.tablero.MAX_Valor_casilla=8;
 		partida.tablero.iniciarTablero();
-		partida.tablero.crearMinas();
+		//partida.tablero.crearMinas();
 	}
 	@Test
 	void testLoopExteriorv5() {
@@ -183,7 +184,7 @@ public class CoverageTest {
 		partida.tablero.setBombasPartida(0);
 		partida.tablero.MAX_Valor_casilla=8;
 		partida.tablero.iniciarTablero();
-		partida.tablero.crearMinas();
+		//partida.tablero.crearMinas();
 	}
 	@Test
 	void testLoopExteriorv4() {
@@ -194,7 +195,7 @@ public class CoverageTest {
 		partida.tablero.setBombasPartida(0);
 		partida.tablero.MAX_Valor_casilla=8;
 		partida.tablero.iniciarTablero();
-		partida.tablero.crearMinas();
+		//partida.tablero.crearMinas();
 	}
 	@Test
 	void testLoopExteriorvn() {
@@ -205,7 +206,25 @@ public class CoverageTest {
 		partida.tablero.setBombasPartida(0);
 		partida.tablero.MAX_Valor_casilla=8;
 		partida.tablero.iniciarTablero();
-		partida.tablero.crearMinas();
+		
+		nivell = 0;
+		partida.setNivel(nivell);
+		partida.tablero.setNivel(nivell);
+		partida.tablero.setMedida(nivell);
+		partida.tablero.setBombas(3);//partint que valor max=4 n<max-1
+		partida.tablero.setBombasPartida(0);
+		partida.tablero.MAX_Valor_casilla=8;
+		partida.tablero.iniciarTablero();
+		
+		nivell = 5;
+		partida.setNivel(nivell);
+		partida.tablero.setNivel(nivell);
+		partida.tablero.setMedida(nivell);
+		partida.tablero.setBombas(3);//partint que valor max=4 n<max-1
+		partida.tablero.setBombasPartida(0);
+		partida.tablero.MAX_Valor_casilla=8;
+		partida.tablero.iniciarTablero();
+		//partida.tablero.crearMinas();
 	}
 	//Per realitzar diferents test de coverage amb la clase partidaGanada()
 		//(s'ha de desmarcar/marcar la rama que volem observar)
