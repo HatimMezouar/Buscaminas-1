@@ -35,7 +35,7 @@ public class Main {
 						case 3:
 						case 4:
 							partida.setNivel(opcion);
-							partida.mostrarTablero();
+							partida.mostrar();
 							seguir = 0;
 							break;
 						case 5:
@@ -125,19 +125,22 @@ public class Main {
 									break;
 							}
 							
-							partida.mostrarTablero();
+							partida.mostrar();
 							posValida = false;
 						}
 						
 						if(!partida.getEnJuego()) {
-							System.out.println("Nom del jugador?\n");
-							int punts=partida.getPuntuacion();
-							String nom = null; 
-							nom = sc.next();
-							Puntuaciones puntuacion = new Puntuaciones(nom, punts, partida.getNivel());
-							//escrivim puntuacions i mostrem per nivell
-							puntuacion.escribirPuntuaciones(punts,partida.getNivel(),nom);
-							puntuacion.mostrar_Puntuaciones(partida.getNivel());
+							if (partida.getPuntuacion()>0) {
+								System.out.println("Nom del jugador?\n");
+								int punts=partida.getPuntuacion();
+								String nom = null; 
+								nom = sc.next();
+								Puntuaciones puntuacion = new Puntuaciones(nom, punts, partida.getNivel());
+								//escrivim puntuacions i mostrem per nivell
+								puntuacion.escribirPuntuaciones(punts,partida.getNivel(),nom);
+								puntuacion.mostrar_Puntuaciones(partida.getNivel());
+							}
+
 						}
 					}catch(InputMismatchException ex) {
 						System.out.println("Error: Introduce un caracter valido");

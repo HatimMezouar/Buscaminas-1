@@ -1,4 +1,5 @@
 package mvc.controller;
+import mvc.model.Casilla;
 import mvc.model.Tablero;
 
 public class Partida {
@@ -42,9 +43,7 @@ public class Partida {
 		return this.nivel;
 	}
 	
-	public void mostrarTablero() {
-		tablero.mostrar();
-	}
+
 	
 	public void destaparCasilla(int posX, int posY) {
 		setEnJuego(tablero.destaparCasilla(posX, posY));
@@ -62,10 +61,41 @@ public class Partida {
 		tablero.desmarcarCasilla(posX, posY);
 	}
 	
-	public void comprobar() {
-		
+	public void mostrar() {
+		Casilla[][] auxtablero = tablero.getTablero();
+		for(int i=0;i<tablero.getMedida();i++){
+    		for(int j=0;j<tablero.getMedida();j++){
+    			if(auxtablero[i][j].getAbierta() && !auxtablero[i][j].getMina()){
+    				System.out.print(" "+auxtablero[i][j].getValor()+" ");
+    			} else {
+	    			if(!auxtablero[i][j].getAbierta()){
+	    				if(auxtablero[i][j].getMarcado()) {
+    						System.out.print(" B ");
+    					} else {
+    						System.out.print("[ ]");
+    					}
+	    			}else{
+	    				System.out.print(" "+auxtablero[i][j].getValor()+" ");
+	    			}
+    			}
+    		}
+    		System.out.println("\n");
+    	}
 	}
 	public int getPuntuacion() {
 		return tablero.getCasillasDestapadas();
+	}
+	public void partidaGanada() {
+
+		if (enJuego) {
+			if (tablero.getCasillasDestapadas() - tablero.getMinasDetectadas() == 
+					tablero.getMedida() * tablero.getMedida() - tablero.getBombas() || 
+					tablero.getMinasDetectadas() == tablero.getBombas()) {
+				enJuego = false;
+			}
+			if (!enJuego) {
+				System.out.println("Has ganado!");
+			}
+		}
 	}
 }

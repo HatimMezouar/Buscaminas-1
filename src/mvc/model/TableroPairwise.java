@@ -63,7 +63,7 @@ public class TableroPairwise {
 		assertEquals(2,mockObject.tablero[4][2].getValor());
 		assertEquals(2,mockObject.tablero[4][3].getValor());
 		assertEquals(1,mockObject.tablero[4][4].getValor());
-		mockObject.mostrar();
+		//mockObject.mostrar();
 	}
 
 }

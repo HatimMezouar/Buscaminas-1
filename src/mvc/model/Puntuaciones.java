@@ -54,21 +54,24 @@ public class Puntuaciones implements Comparable<Puntuaciones>{
 	}
 	
 	public void escribirPuntuaciones(int puntuacion,int nivel, String Nom) {
-        try {
-        	
-            String contenido = Nom+" "+puntuacion+" "+nivel;
-            File file = new File(ruta);
-            // Si el archivo no existe es creado
-            if (!file.exists()) {
-                file.createNewFile();
-            }
-            FileWriter fw = new FileWriter(file.getAbsoluteFile(), true);
-            BufferedWriter bw = new BufferedWriter(fw);
-            bw.write(contenido+"\n");
-            bw.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+		if (puntuacion >0) {
+	        try {
+	        	
+	            String contenido = Nom+" "+puntuacion+" "+nivel;
+	            File file = new File(ruta);
+	            // Si el archivo no existe es creado
+	            if (!file.exists()) {
+	                file.createNewFile();
+	            }
+	            FileWriter fw = new FileWriter(file.getAbsoluteFile(), true);
+	            BufferedWriter bw = new BufferedWriter(fw);
+	            bw.write(contenido+"\n");
+	            bw.close();
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+    	}
+
 	}
 	
 	void leer_Puntuaciones() throws IOException

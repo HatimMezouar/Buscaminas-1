@@ -315,7 +315,7 @@ class TableroTest {
 		assertTrue(mockObject.tablero[4][2].getAbierta());
 		assertTrue(mockObject.tablero[4][3].getAbierta());
 		assertTrue(mockObject.tablero[4][4].getAbierta());
-		mockObject.mostrar();
+		//mockObject.mostrar();
 
 	}
 }

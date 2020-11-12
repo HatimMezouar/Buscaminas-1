@@ -43,33 +43,33 @@ public class CoverageTest {
 		
 		//primer if false
 		partida.setEnJuego(false);
-		partida.comprobar();
+		//partida.comprobar();
 		//primer if true resta false
 		partida.setEnJuego(true);
-		partida.comprobar();
+		//partida.comprobar();
 		//segon if true ultim false
 		partida.tablero.setBombas(0);
 		partida.tablero.setMedida(0);
 		partida.setEnJuego(true);
-		partida.comprobar();
+		//partida.comprobar();
 		//segon if true ultim true
 		partida.tablero.setBombas(1);
 		partida.tablero.setMedida(0);
-		partida.comprobar();
+		//partida.comprobar();
 		//segon if not or
 		partida.setEnJuego(true);
 		partida.tablero.setBombas(2);
 		partida.tablero.setMedida(2);
 		partida.tablero.minas_detectadas=2;
 		partida.tablero.casilla_destapada=2;
-		partida.comprobar();	
+		//partida.comprobar();	
 		//segon if or true
 		partida.setEnJuego(true);
 		partida.tablero.setBombas(20);
 		partida.tablero.setMedida(0);
 		partida.tablero.minas_detectadas=20;
 		partida.tablero.casilla_destapada=1;
-		partida.comprobar();	
+		//partida.comprobar();	
 	}
 //Test per veure com funcionen bucles interns, loop testing 
 //S'ha separat cada "loop" per poder veure el seu comportament
@@ -208,43 +208,44 @@ public class CoverageTest {
 		partida.tablero.iniciarTablero();
 		partida.tablero.crearMinas();
 	}
- //FI loop testing crearMinas
- //Loop testing aniuat per veure la funció mostrrTaulell
-	@Test
-	void testLoopMostrarTaulellv0() {
-		Tablero tablero = new Tablero(1);
-		tablero.setMedida(0);
-		tablero.mostrar();
-	}
-	@Test
-	void testLoopInteriorMostrarTaulellv1() {
-		Tablero tablero = new Tablero(1);
-		tablero.setMedida(1);
-		tablero.mostrar();
-	}
-	@Test
-	void testLoopMostrarTaulellv2() {
-		Tablero tablero = new Tablero(2);
-		tablero.setMedida(2);
-		tablero.mostrar();
-	}
-	@Test
-	void testLoopMostrarTaulellv3() {
-		Tablero tablero = new Tablero(3);
-		tablero.setMedida(3);
-		tablero.mostrar();
-	}
-	@Test
-	void testLoopMostrarTaulellv4() {
-		Tablero tablero = new Tablero(4);
-		tablero.setMedida(4);
-		tablero.mostrar();
-	}
-	@Test
-	void testLoopMostrarTaulellv5() {
-		Tablero tablero = new Tablero(5);
-		tablero.setMedida(5);
-		tablero.mostrar();
-	}
+	//Per realitzar diferents test de coverage amb la clase partidaGanada()
+		//(s'ha de desmarcar/marcar la rama que volem observar)
+		@Test
+		void testPComprovarPartidaCoverage() {
+			int nivell = 1;
+			Partida partida = new Partida();
+			partida.setNivel(nivell);
+			//partida.enJuego=true;
+			
+			//primer if false
+			partida.setEnJuego(false);;
+			partida.partidaGanada();
+			//primer if true resta false
+			partida.enJuego=true;
+			partida.partidaGanada();
+			//segon if true ultim false
+			partida.tablero.bombas=0;
+			partida.tablero.medida=0;
+			partida.enJuego=true;
+			partida.partidaGanada();
+			//segon if true ultim true
+			partida.tablero.bombas=1;
+			partida.tablero.medida=0;
+			partida.partidaGanada();
+			//segon if not or
+			partida.enJuego=true;
+			partida.tablero.bombas=2;
+			partida.tablero.medida=2;
+			partida.tablero.minas_detectadas=2;
+			partida.tablero.casilla_destapada=2;
+			partida.partidaGanada();	
+			//segon if or true
+			partida.enJuego=true;
+			partida.tablero.bombas=20;
+			partida.tablero.medida=0;
+			partida.tablero.minas_detectadas=20;
+			partida.tablero.casilla_destapada=1;
+			partida.partidaGanada();	
+		}
   //Fi loop testing mostrarTaulell
 }

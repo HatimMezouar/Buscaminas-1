@@ -40,33 +40,41 @@ class PartidaTest {
 		Partida partida = new Partida();
 		
 		int nivel = 0;
+		System.out.print("[Nivel 0 ]\n");
 		partida.setNivel(nivel);
 		assertEquals(1, partida.getNivel());
 		assertNotEquals(0, partida.getNivel());
-		
+		partida.mostrar();
+		System.out.print("[Nivel 1 ]\n");
 		nivel = 1;
 		partida.setNivel(nivel);
 		assertEquals(1, partida.getNivel());
 		assertNotEquals(0, partida.getNivel());
-		
+		partida.mostrar();
+		System.out.print("[Nivel 2 ]\n");
 		nivel = 2;
 		partida.setNivel(nivel);
 		assertEquals(2, partida.getNivel());
 		assertNotEquals(1, partida.getNivel());
-		
+		partida.mostrar();
+		System.out.print("[Nivel 3 ]\n");
 		nivel = 3;
 		partida.setNivel(nivel);
 		assertEquals(3, partida.getNivel());
 		assertNotEquals(2, partida.getNivel());
-		
+		partida.mostrar();
+		System.out.print("[Nivel 4 ]\n");
 		nivel = 4;
 		partida.setNivel(nivel);
 		assertEquals(4, partida.getNivel());
 		assertNotEquals(3, partida.getNivel());
-
+		partida.mostrar();
+		System.out.print("[Nivel 5 ]\n");
 		nivel = 5;
 		partida.setNivel(nivel);
 		assertEquals(4, partida.getNivel());
 		assertNotEquals(5, partida.getNivel());
+		partida.mostrar();
 	}
+
 }
