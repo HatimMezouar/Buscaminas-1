@@ -13,11 +13,10 @@ public class CoverageTest {
 		Casilla casilla=new Casilla();
 		casilla.posiciones(0,0);
 		casilla.setValor(2);
+		casilla.setValor(1);
+		casilla.valor = 8;
+		casilla.setValor(1);
 		casilla.setValor(-1);
-		casilla.setValor(1);
-		casilla.setValor(8);
-		casilla.setValor(1);
-		
 	}
 	//Per realitzar diferents test de coverage amb l'atribut esmina de la casilla
 	//(s'ha de jugar amb els valors)
