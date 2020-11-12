@@ -113,6 +113,9 @@ public class Main {
 										System.out.println("Has perdido!");
 										System.out.println("------------");
 									}
+									else {
+										partida.partidaGanada();
+									}
 									break;
 								case 4:
 									System.out.println("Seguro que quieres salir? (S/N)\n");
@@ -129,34 +132,36 @@ public class Main {
 							posValida = false;
 						}
 						
-						if(!partida.getEnJuego()) {
-							if (partida.getPuntuacion()>0) {
-								System.out.println("Nom del jugador?\n");
-								int punts=partida.getPuntuacion();
-								String nom = null; 
-								nom = sc.next();
-								Puntuaciones puntuacion = new Puntuaciones(nom, punts, partida.getNivel());
-								//escrivim puntuacions i mostrem per nivell
-								puntuacion.escribirPuntuaciones(punts,partida.getNivel(),nom);
-								puntuacion.mostrar_Puntuaciones(partida.getNivel());
-							}
 
-						}
 					}catch(InputMismatchException ex) {
 						System.out.println("Error: Introduce un caracter valido");
 						System.out.println();
 						sc.next();
 					}
 
+
+
 				}
+				if (partida.getPuntuacion()>0) {
+					System.out.println("Nom del jugador?\n");
+					int punts=partida.getPuntuacion();
+					String nom = null; 
+					nom = sc.next();
+					Puntuaciones puntuacion = new Puntuaciones(nom, punts, partida.getNivel());
+					//escrivim puntuacions i mostrem per nivell
+					puntuacion.escribirPuntuaciones(punts,partida.getNivel(),nom);
+					puntuacion.mostrar_Puntuaciones(partida.getNivel());
+
+				}
+				sc.close();
 			}catch(InputMismatchException ex) {
 				System.out.println("Error: Introduce un caracter valido");
 				System.out.println();
 				sc.next();
 			}
+
 		}
-		
-		sc.close();
+
 	}
 	
 }
