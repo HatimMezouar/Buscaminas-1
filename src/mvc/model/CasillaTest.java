@@ -62,4 +62,17 @@ class CasillaTest {
 		assertNotEquals(5, cas1.getX());
 		assertNotEquals(4, cas1.getY());
 	}
+	//Per realitzar diferents test de coverage amb el valor de la casilla
+	//(s'ha de jugar amb els valors)
+	@Test
+	void testCcasillasetvalor() {
+		Casilla casilla=new Casilla();
+		casilla.posiciones(0,0);
+		casilla.setValor(2);
+		casilla.setValor(1);
+		casilla.valor = 8;
+		casilla.setValor(1);
+		casilla.setValor(-1);
+		
+	}
 }

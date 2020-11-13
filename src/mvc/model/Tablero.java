@@ -2,12 +2,14 @@ package mvc.model;
 
 
 public class Tablero {
-	protected int nivel = 1, bombas = 0, medida = 0;
+	protected int nivel = 1;
+	public int bombas = 0;
+	public int medida = 0;
 	protected Casilla[][] tablero;
 	public int MAX_Valor_casilla = 8;
 	protected int bombas_tablero=0;
-    protected int casilla_destapada = 0;
-    protected int minas_detectadas = 0;
+    public int casilla_destapada = 0;
+    public int minas_detectadas = 0;
     
 	public Tablero(int nivel) {
 		setNivel(nivel);

@@ -76,5 +76,82 @@ class PartidaTest {
 		assertNotEquals(5, partida.getNivel());
 		partida.mostrar();
 	}
-
+	//Per realitzar diferents test de coverage amb la clase partidaGanada()
+	//(s'ha de desmarcar/marcar la rama que volem observar)
+	@Test
+	void testPComprovarPartidaCoverage() {
+		int nivell = 1;
+		Partida partida = new Partida();
+		partida.setNivel(nivell);
+		//partida.enJuego=true;
+		
+		//primer if false
+		partida.setEnJuego(false);;
+		partida.partidaGanada();
+		//primer if true resta false
+		partida.enJuego=true;
+		partida.partidaGanada();
+		//segon if true ultim false
+		partida.tablero.bombas=0;
+		partida.tablero.medida=0;
+		partida.enJuego=true;
+		partida.partidaGanada();
+		//segon if true ultim true
+		partida.tablero.bombas=1;
+		partida.tablero.medida=0;
+		partida.partidaGanada();
+		//segon if not or
+		partida.enJuego=true;
+		partida.tablero.bombas=2;
+		partida.tablero.medida=2;
+		partida.tablero.minas_detectadas=2;
+		partida.tablero.casilla_destapada=2;
+		partida.partidaGanada();	
+		//segon if or true
+		partida.enJuego=true;
+		partida.tablero.bombas=20;
+		partida.tablero.medida=0;
+		partida.tablero.minas_detectadas=20;
+		partida.tablero.casilla_destapada=1;
+		partida.partidaGanada();	
+	}
+	 //Loop testing para ver tablero
+		@Test
+		void testLoopMostrarTaulellv0() {
+			Partida tablero = new Partida();
+			tablero.setNivel(0);
+			tablero.marcarCasilla(1, 1);
+			tablero.destaparCasilla(0, 0);
+			tablero.mostrar();
+		}
+		@Test
+		void testLoopInteriorMostrarTaulellv1() {
+			Partida tablero = new Partida();
+			tablero.setNivel(1);
+			tablero.mostrar();
+		}
+		@Test
+		void testLoopMostrarTaulellv2() {
+			Partida tablero = new Partida();
+			tablero.setNivel(2);
+			tablero.mostrar();
+		}
+		@Test
+		void testLoopMostrarTaulellv3() {
+			Partida tablero = new Partida();
+			tablero.setNivel(3);
+			tablero.mostrar();
+		}
+		@Test
+		void testLoopMostrarTaulellv4() {
+			Partida tablero = new Partida();
+			tablero.setNivel(4);
+			tablero.mostrar();
+		}
+		@Test
+		void testLoopMostrarTaulellv5() {
+			Partida tablero = new Partida();
+			tablero.setNivel(5);
+			tablero.mostrar();
+		}
 }

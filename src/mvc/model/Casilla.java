@@ -84,9 +84,5 @@ public class Casilla {
 	public boolean getAbierta() {
 		return abierta;
 	}
-	
-	public String toString()
-	{
-		return "(" + posicionX + "," + posicionY + ")";
-	}
+
 }

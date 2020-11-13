@@ -15,7 +15,7 @@ public class Main {
 		
 		Partida partida = new Partida();
 		Scanner sc = new Scanner(System.in);
-		Scanner reader = new Scanner(System.in);
+
 		while(entrada) {
 			try {
 				while(seguir == 1) {
@@ -40,7 +40,7 @@ public class Main {
 							break;
 						case 5:
 							System.out.println("Seguro que quieres salir? (S/N)\n");
-							salir = reader.next();
+							salir = sc.next();
 							seguir = partida.continuarJuego(salir);
 							if(seguir == 0) {
 								System.out.println("Vuelve pronto!");
@@ -119,7 +119,7 @@ public class Main {
 									break;
 								case 4:
 									System.out.println("Seguro que quieres salir? (S/N)\n");
-									salir = reader.next();
+									salir = sc.next();
 									seguir = partida.continuarJuego(salir);
 									if(seguir == 0) {
 										partida.setEnJuego(false);
