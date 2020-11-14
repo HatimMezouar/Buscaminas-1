@@ -269,9 +269,7 @@ public class Tablero {
 	public int getMedida() {
 		return medida;
 	}
-	public int getBombasPartida() {
-		return bombas_tablero;
-	}
+
     public int getCasillasDestapadas() {
         return casilla_destapada;
     }

@@ -139,6 +139,10 @@ class TableroTest {
 		assertTrue(!mockObject.tablero[2][2].getAbierta());
 		assertTrue(mockObject.destaparCasilla(2, 2));
 		assertTrue(mockObject.tablero[2][2].getAbierta());
+
+		assertTrue(mockObject.destaparCasilla(5, 7));
+		mockObject.tablero[3][3].setMina(true);
+		assertTrue(!mockObject.destaparCasilla(3, 3));
 	}
 	
 	@Test
@@ -526,5 +530,22 @@ class TableroTest {
 			partida.tablero.MAX_Valor_casilla=8;
 			partida.tablero.iniciarTablero();
 			partida.tablero.crearMinas();
+		}
+		@Test
+		void testMarcarDesmarcarCasilla() {
+			int nivell = 1;
+			//TableroMock mockObject = Mockito.mock(TableroMock.class);
+			TableroMock mockObject = new TableroMock(nivell);
+
+			mockObject.marcarCasilla(0,0);
+			assertTrue(mockObject.tablero[0][0].getMarcado());
+			mockObject.desmarcarCasilla(0,0);
+			assertTrue(mockObject.tablero[0][0].getMarcado());
+			mockObject.marcarCasilla(0,4);
+			assertTrue(!mockObject.tablero[0][4].getMarcado());
+			mockObject.desmarcarCasilla(0,4);
+			assertTrue(mockObject.tablero[0][0].getMarcado());
+			//mockObject.mostrar();
+
 		}
 }

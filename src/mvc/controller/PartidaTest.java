@@ -146,12 +146,29 @@ class PartidaTest {
 		void testLoopMostrarTaulellv4() {
 			Partida tablero = new Partida();
 			tablero.setNivel(4);
+
 			tablero.mostrar();
 		}
 		@Test
 		void testLoopMostrarTaulellv5() {
 			Partida tablero = new Partida();
 			tablero.setNivel(5);
+			tablero.destaparCasilla(0, 1);
+			tablero.marcarCasilla(0, 0);
+			tablero.desmarcarCasilla(0, 0);
+			tablero.destaparCasilla(0, 4);
+			tablero.mostrar();
+		}
+		@Test
+		void testLoopMostrarTaulelldesmarcat() {
+			Partida tablero = new Partida();
+			tablero.setNivel(5);
+			tablero.destaparCasilla(0, 1);
+			tablero.marcarCasilla(0, 0);
+			tablero.destaparCasilla(1, 1);
+			tablero.destaparCasilla(0, 1);
+			tablero.marcarCasilla(3, 3);
+			tablero.destaparCasilla(5, 4);
 			tablero.mostrar();
 		}
 }
