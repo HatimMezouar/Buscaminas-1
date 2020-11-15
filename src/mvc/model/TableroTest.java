@@ -54,7 +54,9 @@ class TableroTest {
 				}
     		}
 		}
+		assertNotEquals(19, mines);
 		assertEquals(20, mines);
+		assertNotEquals(21, mines);
 		nivell = 3;
 		mines = 0;
 		partida = new Tablero(nivell);
@@ -66,7 +68,9 @@ class TableroTest {
 				}
     		}
 		}
+		assertNotEquals(14, mines);
 		assertEquals(15, mines);
+		assertNotEquals(16, mines);
 		nivell = 2;
 		mines = 0;
 		partida = new Tablero(nivell);
@@ -78,7 +82,9 @@ class TableroTest {
 				}
     		}
 		}
+		assertNotEquals(9, mines);
 		assertEquals(10, mines);
+		assertNotEquals(11, mines);
 		nivell = 1;
 		mines = 0;
 		partida = new Tablero(nivell);
@@ -90,8 +96,9 @@ class TableroTest {
 				}
     		}
 		}
+		assertNotEquals(4, mines);
 		assertEquals(5, mines);
-		
+		assertNotEquals(6, mines);
 		nivell = 0;
 		mines = 0;
 		partida = new Tablero(nivell);
@@ -103,8 +110,9 @@ class TableroTest {
 				}
     		}
 		}
+		assertNotEquals(4, mines);
 		assertEquals(5, mines);
-		
+		assertNotEquals(6, mines);
 		nivell = 5;
 		mines = 0;
 		partida = new Tablero(nivell);
@@ -116,7 +124,9 @@ class TableroTest {
 				}
     		}
 		}
+		assertNotEquals(19, mines);
 		assertEquals(20, mines);
+		assertNotEquals(21, mines);
 		
 	}
 	//Mitjançant un Mock testejem un Tablero (simulant una partida)
