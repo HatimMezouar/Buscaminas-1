@@ -1,5 +1,7 @@
 package mvc.model;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 public class TableroMock extends Tablero{
 	//protected Casilla[][] tablero;
     
@@ -104,5 +106,15 @@ public class TableroMock extends Tablero{
 	
 	public Casilla[][] getTablero() {
 		return tablero;
+	}
+	public int revelarTablero() {
+		
+		for(int i = 0; i < getMedida(); i++) {
+			for(int j = 0; j < getMedida(); j++) {
+				if(!tablero[i][j].getMina()) {desmarcarCasilla(i,j);}
+			}
+		}
+		return getCasillasDestapadas();
+
 	}
 }

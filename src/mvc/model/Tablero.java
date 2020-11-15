@@ -5,7 +5,7 @@ public class Tablero {
 	protected int nivel = 1;
 	public int bombas = 0;
 	public int medida = 0;
-	protected Casilla[][] tablero;
+	public Casilla[][] tablero;
 	public int MAX_Valor_casilla = 8;
 	protected int bombas_tablero=0;
     public int casilla_destapada = 0;
@@ -280,5 +280,6 @@ public class Tablero {
 	public Casilla[][] getTablero() {
 		return tablero;
 	}
+
 
 }
